@@ -1,0 +1,6 @@
+C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\FyodorDostoevskyRPG.exe
+C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\FyodorDostoevskyRPG.pdb
+C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.csprojResolveAssemblyReference.cache
+C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.exe
+C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.pdb
