@@ -4,10 +4,9 @@ C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\Fyod
 C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.exe
 C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.pdb
-F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\TitleImage.xnb
-F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\FyodorDostoevskyRPG.exe
-F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\FyodorDostoevskyRPG.pdb
-F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.csprojResolveAssemblyReference.cache
-F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.exe
-F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.pdb
+C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.csprojResolveAssemblyReference.cache
+C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.exe
+C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.pdb
+C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\FyodorDostoevskyRPG.exe
+C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\FyodorDostoevskyRPG.pdb
