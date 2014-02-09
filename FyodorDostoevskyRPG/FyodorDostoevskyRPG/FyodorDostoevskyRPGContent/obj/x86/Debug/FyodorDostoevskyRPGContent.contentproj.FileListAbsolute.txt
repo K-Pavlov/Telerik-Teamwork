@@ -1,1 +1,2 @@
 C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPGContent\obj\x86\Debug\FyodorDostoevskyRPGContent.contentprojResolveAssemblyReference.cache
+F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPGContent\obj\x86\Debug\FyodorDostoevskyRPGContent.contentprojResolveAssemblyReference.cache
