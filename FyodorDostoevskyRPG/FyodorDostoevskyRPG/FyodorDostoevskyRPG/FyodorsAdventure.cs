@@ -1,10 +1,11 @@
-using System;
-
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
 namespace FyodorDostoevskyRPG
 {
+    using System;
+    using FyodorDostoevskyRPG.ScreenManagement;
+
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+
     public class FyodorsAdventure : Game
     {
         GraphicsDeviceManager graphics;
@@ -43,6 +44,7 @@ namespace FyodorDostoevskyRPG
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            ScreenManager.Instance.LoadContent(this.Content);
         }
 
         /// <summary>
@@ -62,7 +64,7 @@ namespace FyodorDostoevskyRPG
         protected override void Update(GameTime gameTime)
         {
             // TODO: Add your update logic here
-
+            ScreenManager.Instance.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -72,9 +74,12 @@ namespace FyodorDostoevskyRPG
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
+            this.spriteBatch.Begin();
+            ScreenManager.Instance.Draw(this.spriteBatch);
+            this.spriteBatch.End();
 
             base.Draw(gameTime);
         }
