@@ -42,7 +42,8 @@ namespace FyodorDostoevskyRPG
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
+            ScreenManager.Instance.SpriteBatch = spriteBatch;
             // TODO: use this.Content to load your game content here
             ScreenManager.Instance.LoadContent(this.Content);
         }

@@ -10,11 +10,13 @@
     {
         private static ScreenManager instance;
 
-        private ContentManager screenManagerContent;
+        public ContentManager screenManagerContent;
         private Stack<BaseScreen> screenStack = new Stack<BaseScreen>();
         private BaseScreen currentScreen = new TitleScreen();
         private Vector2 screenSize;
 
+        public GraphicsDevice GraphicsDevice;
+        public SpriteBatch SpriteBatch;
         #region Constructors
         // private za da ne moje da se instancira poveche ot vednuj
         private ScreenManager() { }

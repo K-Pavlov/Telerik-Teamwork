@@ -10,11 +10,13 @@
         // Fields
         private KeyboardState currentKey, previousKey;
         private Texture2D logo;
+        public Images Image;
 
         // Methods
         public override void LoadContent(ContentManager content)
         {
             base.LoadContent(content);
+            // link to download the image: http://reggiocomics.files.wordpress.com/2010/04/2324.jpg
             this.logo = this.baseScreenContentManager.Load<Texture2D>("TitleImage");
         }
 
@@ -32,7 +34,6 @@
             {
                 ScreenManager.Instance.LoadScreen(new MainMenuScreen());
             }
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)

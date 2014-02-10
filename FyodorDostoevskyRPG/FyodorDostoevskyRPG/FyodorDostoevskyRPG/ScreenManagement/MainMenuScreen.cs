@@ -9,11 +9,13 @@
     {
         // Fields
         private KeyboardState currentKey, previousKey;
+        private Texture2D logo;
 
         // Methods
         public override void LoadContent(ContentManager content)
         {
             base.LoadContent(content);
+            this.logo = this.baseScreenContentManager.Load<Texture2D>("MainMenuImage");
         }
 
         public override void UnloadContent()
@@ -34,6 +36,8 @@
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Draw(logo, new Vector2(0, 0), Color.White);
+
         }
     }
 }
