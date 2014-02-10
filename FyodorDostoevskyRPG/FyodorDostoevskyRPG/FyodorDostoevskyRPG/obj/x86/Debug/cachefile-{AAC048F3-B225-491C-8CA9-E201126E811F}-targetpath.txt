@@ -1,0 +1,3 @@
+Content\MainMenuImage.xnb
+Content\TitleImage.xnb
+Content\Fonts\WideLatin.xnb
