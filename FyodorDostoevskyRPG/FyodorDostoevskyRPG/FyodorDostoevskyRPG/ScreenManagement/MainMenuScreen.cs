@@ -30,7 +30,7 @@
 
             if (this.previousKey.IsKeyDown(Keys.Space) && this.currentKey.IsKeyUp(Keys.Space))
             {
-                ScreenManager.Instance.LoadScreen(new TitleScreen());
+                ScreenManager.Instance.LoadScreen(new MapOneScreen());
             }
         }
 

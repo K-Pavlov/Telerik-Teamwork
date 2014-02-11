@@ -1,4 +1,0 @@
-F:\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPGContent\obj\x86\Debug\FyodorDostoevskyRPGContent.contentprojResolveAssemblyReference.cache
-C:\Users\lipstich\Desktop\TelerikAcademy\03OOP\TEAMWORK\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPGContent\obj\x86\Debug\FyodorDostoevskyRPGContent.contentprojResolveAssemblyReference.cache
-C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPGContent\obj\x86\Debug\FyodorDostoevskyRPGContent.contentprojResolveAssemblyReference.cache
-C:\Users\kalin\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPGContent\obj\x86\Debug\FyodorDostoevskyRPGContent.contentprojResolveAssemblyReference.cache

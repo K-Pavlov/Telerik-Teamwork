@@ -5,11 +5,14 @@ namespace FyodorDostoevskyRPG
 
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
 
     public class FyodorsAdventure : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        Texture2D customCursor;
 
         public FyodorsAdventure()
         {
@@ -18,7 +21,7 @@ namespace FyodorDostoevskyRPG
             graphics.PreferredBackBufferHeight = 600;
 
             Content.RootDirectory = "Content";
-            this.IsMouseVisible = true;
+            this.IsMouseVisible = false;
         }
 
         /// <summary>
@@ -45,6 +48,7 @@ namespace FyodorDostoevskyRPG
             ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
             ScreenManager.Instance.SpriteBatch = spriteBatch;
             // TODO: use this.Content to load your game content here
+            this.customCursor = Content.Load<Texture2D>("mouseCursor");
             ScreenManager.Instance.LoadContent(this.Content);
         }
 
@@ -80,6 +84,7 @@ namespace FyodorDostoevskyRPG
             // TODO: Add your drawing code here
             this.spriteBatch.Begin();
             ScreenManager.Instance.Draw(this.spriteBatch);
+            this.spriteBatch.Draw(this.customCursor, new Vector2(Mouse.GetState().X, Mouse.GetState().Y), Color.White);
             this.spriteBatch.End();
 
             base.Draw(gameTime);

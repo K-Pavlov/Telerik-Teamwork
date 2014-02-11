@@ -1,4 +1,4 @@
-﻿namespace FyodorDostoevskyRPG
+﻿namespace FyodorDostoevskyRPG.GameUnits
 {
     using System;
     class Monsters : Unit

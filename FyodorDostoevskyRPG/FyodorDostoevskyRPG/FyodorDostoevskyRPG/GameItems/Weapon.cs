@@ -1,4 +1,4 @@
-﻿namespace FyodorDostoevskyRPG
+﻿namespace FyodorDostoevskyRPG.GameItems
 {
     using System;
     using Microsoft.Xna.Framework;
