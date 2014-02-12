@@ -1,9 +1,10 @@
-﻿namespace FyodorDostoevskyRPG.GameUnits
+﻿namespace FyodorDostoevskyRPG.GameObject.GameUnits
 {
     using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    class Hero: Unit
+
+    class Hero : Unit, IDrawObject
     {
         private int damageMin;
         private int damageMax;

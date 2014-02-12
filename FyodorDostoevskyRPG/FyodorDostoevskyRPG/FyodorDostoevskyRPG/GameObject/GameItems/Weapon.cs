@@ -1,9 +1,10 @@
-﻿namespace FyodorDostoevskyRPG.GameItems
+﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
     using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
+
     class Weapon : Item
     {
         protected int damage;

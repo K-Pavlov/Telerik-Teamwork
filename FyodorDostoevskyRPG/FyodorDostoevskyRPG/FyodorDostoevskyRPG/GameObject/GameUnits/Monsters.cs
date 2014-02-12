@@ -1,7 +1,6 @@
-﻿namespace FyodorDostoevskyRPG.GameUnits
+﻿namespace FyodorDostoevskyRPG.GameObject.GameUnits
 {
-    using System;
-    class Monsters : Unit
+    class Monsters : Unit, IDrawObject
     {
         protected bool ranged;
 
@@ -9,11 +8,11 @@
         {
             get 
             { 
-                return ranged; 
+                return this.ranged; 
             }
             set 
             { 
-                ranged = value; 
+                this.ranged = value; 
             }
         }
     }

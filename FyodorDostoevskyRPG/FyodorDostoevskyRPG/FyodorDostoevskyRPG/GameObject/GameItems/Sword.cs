@@ -1,10 +1,11 @@
-﻿namespace FyodorDostoevskyRPG.GameItems
+﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
     using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
-    class Sword : Weapon
+
+    class Sword : Weapon, IDrawObject
     {
         public Sword()
         {

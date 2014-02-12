@@ -1,16 +1,16 @@
-﻿namespace FyodorDostoevskyRPG.GameUnits
+﻿namespace FyodorDostoevskyRPG.GameObject.GameUnits
 {
     using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
    
-    class Unit: IActions
+    class Unit : ObjectRPG, IDrawObject, IActions
     {
         protected string name;
         protected int health;
         protected int damage;
-        protected Vector2 position;
-        protected Texture2D image;
+        //protected Vector2 position;
+        //protected Texture2D image; 
         protected bool isAlive;
 
         public string Name
@@ -59,33 +59,33 @@
                 damage = value;
             }
         }
-        public Vector2 Position
-        {
-            get
-            {
-                return position;
-            }
-            set
-            {
-                if ((value.X < 0) || (value.X > 800) || (value.Y < 0) || (value.Y > 600))
-                {
-                    throw new ArgumentOutOfRangeException("Coordinates out of screen! (800x600)");
-                }
-                position.X = value.X;
-                position.Y = value.Y;
-            }
-        }
-        public Texture2D Image
-        {
-            get
-            {
-                return image;
-            }
-            set
-            {
-         //       image.SetData(); Тук ми е малко тъмна индия :D
-            }
-        }
+        //public Vector2 Position
+        //{
+        //    get
+        //    {
+        //        return position;
+        //    }
+        //    set
+        //    {
+        //        if ((value.X < 0) || (value.X > 800) || (value.Y < 0) || (value.Y > 600))
+        //        {
+        //            throw new ArgumentOutOfRangeException("Coordinates out of screen! (800x600)");
+        //        }
+        //        position.X = value.X;
+        //        position.Y = value.Y;
+        //    }
+        //}
+        //public Texture2D Image
+        //{
+        //    get
+        //    {
+        //        return image;
+        //    }
+        //    set
+        //    {
+        // //       image.SetData(); Тук ми е малко тъмна индия :D
+        //    }
+        //}
 
 
 

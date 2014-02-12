@@ -7,7 +7,8 @@
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
 
-    using FyodorDostoevskyRPG.GameUnits;
+    using FyodorDostoevskyRPG.GameObject.GameItems;
+    using FyodorDostoevskyRPG.GameObject.GameUnits;
 
     class MapOneScreen : BaseScreen
     {
@@ -40,7 +41,7 @@
         {
             foreach (var dragon in this.dragonOnThisMap)
             {
-                spriteBatch.Draw(dragon.Image, dragon.Position, Color.White);
+                dragon.Draw(spriteBatch);
             }
         }
     }

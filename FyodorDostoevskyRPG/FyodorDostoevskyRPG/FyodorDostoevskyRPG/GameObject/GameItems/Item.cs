@@ -1,35 +1,38 @@
-﻿namespace FyodorDostoevskyRPG.GameItems
+﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
     using System;
-    using FyodorDostoevskyRPG.ScreenManagement;
+    
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
 
-    class Item
+    using FyodorDostoevskyRPG.ScreenManagement;
+
+    class Item : ObjectRPG, IDrawObject
     {
-        protected Vector2 position;
-        public Vector2 Position
-        {
-            get
-            { return this.position; }
-            set
-            {
-                if ((value.X < 0) || (value.X > 800) || (value.Y < 0) || (value.Y > 600))
-                {
-                    throw new ArgumentOutOfRangeException("Coordinates out of screen! (800x600)");
-                }
-                this.position.X = value.X;
-                this.position.Y = value.Y;
-            }
-        }
+        //protected Vector2 position;
+        //public Vector2 Position
+        //{
+        //    get
+        //    { return this.position; }
+        //    set
+        //    {
+        //        if ((value.X < 0) || (value.X > 800) || (value.Y < 0) || (value.Y > 600))
+        //        {
+        //            throw new ArgumentOutOfRangeException("Coordinates out of screen! (800x600)");
+        //        }
+        //        this.position.X = value.X;
+        //        this.position.Y = value.Y;
+        //    }
+        //}
+
         //####################Is this how it's done?#####################\\
         //Only gets the image
-        protected Texture2D image;
-        public Texture2D Image
-        {
-            get { return this.image; }
-        }
+        //protected Texture2D image;
+        //public Texture2D Image
+        //{
+        //    get { return this.image; }
+        //}
 
         //Path sets the Texture2D image to the image 
         protected string texture2DPath;
