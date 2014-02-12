@@ -24,13 +24,23 @@
             }
         }
 
-        protected double crit;
-        public double Crit
+        protected double defense;
+        public double Defense
         {
-            get { return this.crit; }
+            get { return this.defense; }
             set
             {
-                this.crit = value;
+                this.defense = value;
+            }
+        }
+
+        protected double block;
+        public double Block
+        {
+            get { return this.block; }
+            set
+            {
+                this.block = value;
             }
         }
 
@@ -45,13 +55,14 @@
         {
             this.special = true;
         }
-        public Shield(string pathToImage, Vector2 position, bool isUsed, int damage, double crit)
+        public Shield(string pathToImage, Vector2 position, bool isUsed, int damage, double defense, double block)
         {
             this.texture2DPath = pathToImage;
             this.position = position;
             this.isUsed = isUsed;
             this.damage = damage;
-            this.crit = crit;
+            this.defense = defense;
+            this.block = block;
         }
 
     }
