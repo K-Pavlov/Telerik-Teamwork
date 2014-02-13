@@ -12,6 +12,7 @@
 
     class MapOneScreen : BaseScreen
     {
+        Hero braveHero;
         Dragon[] dragonOnThisMap;
 
         public override void LoadContent(ContentManager content)
@@ -25,6 +26,7 @@
                 new Dragon("Mosho", 100, 10, new Vector2(550, 500), true),
                 new Dragon("Shosho", 100, 10, new Vector2(400, 350), true),
             };
+            braveHero = new Hero("DragonSlayer", 500, 10, 14, new Vector2(10, 10));
         }
 
         public override void UnloadContent()
@@ -32,9 +34,16 @@
             base.UnloadContent();
         }
 
+        public void HandleInput()
+        {
+            this.braveHero.HandleInput();
+        }
+
         // tuk tryabwa da doidat proverkite dali nashiqt geroi e stupil wurhu neshto
         public override void Update(GameTime gameTime)
         {
+            this.braveHero.HandleInput();
+            this.braveHero.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -43,6 +52,7 @@
             {
                 dragon.Draw(spriteBatch);
             }
+            this.braveHero.Draw(spriteBatch);
         }
     }
 }

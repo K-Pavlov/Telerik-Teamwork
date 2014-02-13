@@ -33,7 +33,6 @@ namespace FyodorDostoevskyRPG
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -47,6 +46,7 @@ namespace FyodorDostoevskyRPG
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
             ScreenManager.Instance.SpriteBatch = spriteBatch;
+
             // TODO: use this.Content to load your game content here
             this.customCursor = Content.Load<Texture2D>("mouseCursor");
             ScreenManager.Instance.LoadContent(this.Content);
@@ -69,8 +69,9 @@ namespace FyodorDostoevskyRPG
         protected override void Update(GameTime gameTime)
         {
             // TODO: Add your update logic here
-            ScreenManager.Instance.Update(gameTime);
             base.Update(gameTime);
+            InputManager.Instance.Update();
+            ScreenManager.Instance.Update(gameTime);
         }
 
         /// <summary>

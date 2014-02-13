@@ -8,7 +8,7 @@
 
     using FyodorDostoevskyRPG.ScreenManagement;
 
-    class Item : ObjectRPG, IDrawObject
+    public abstract class Item : ObjectRPG, IDrawObject
     {
         //protected Vector2 position;
         //public Vector2 Position
@@ -35,20 +35,20 @@
         //}
 
         //Path sets the Texture2D image to the image 
-        protected string texture2DPath;
-        public string Texture2DPath
-        {
-            get { return this.texture2DPath; }
-            set 
-            { 
-                this.texture2DPath = value;
-                ContentManager content = new ContentManager(ScreenManager.Instance.screenManagerContent.ServiceProvider, "Content");
-                if (texture2DPath != string.Empty)
-                {
-                    this.image = content.Load<Texture2D>(texture2DPath);
-                }
-            }
-        }
+        //protected string texture2DPath;
+        //public string Texture2DPath
+        //{
+        //    get { return this.texture2DPath; }
+        //    set 
+        //    { 
+        //        this.texture2DPath = value;
+        //        ContentManager content = new ContentManager(ScreenManager.Instance.screenManagerContent.ServiceProvider, "Content");
+        //        if (texture2DPath != string.Empty)
+        //        {
+        //            this.image = content.Load<Texture2D>(texture2DPath);
+        //        }
+        //    }
+        //}
                 
         protected bool isUsed;
         public bool IsUsed

@@ -17,9 +17,11 @@
 
         public GraphicsDevice GraphicsDevice;
         public SpriteBatch SpriteBatch;
+
         #region Constructors
         // private za da ne moje da se instancira poveche ot vednuj
         private ScreenManager() { }
+
         static ScreenManager()
         {
             ScreenManager.instance = new ScreenManager();

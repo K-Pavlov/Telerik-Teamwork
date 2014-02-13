@@ -5,9 +5,10 @@
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
 
-    class Weapon : Item
+    public abstract class Weapon : Item
     {
         protected int damage;
+
         public int Damage
         {
             get { return this.damage; }

@@ -13,8 +13,8 @@
         }
         public Flail(string pathToImage, Vector2 position, bool isUsed, int damage, double crit)
         {
-            this.texture2DPath = pathToImage;
-            this.position = position;
+            //this.texture2DPath = pathToImage;
+            //this.position = position;
             this.isUsed = isUsed;
             this.damage = damage;
             this.crit = crit;

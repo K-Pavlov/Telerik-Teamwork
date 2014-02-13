@@ -6,40 +6,35 @@
 
     public abstract class ObjectRPG : IDrawObject
     {
-        protected Vector2 position;
-        protected Texture2D image;
+        // Fields
+        private Vector2 position;
+        private Texture2D image;
 
+        // Properties
         public Vector2 Position
         {
-            get
-            {
-                return this.position;
-            }
-            set
+            get { return this.position; }
+            protected set
             {
                 if ((value.X < 0) || (value.X > 800) || (value.Y < 0) || (value.Y > 600))
                 {
                     throw new ArgumentOutOfRangeException("Coordinates out of screen! (800x600)");
                 }
-                this.position.X = value.X;
-                this.position.Y = value.Y;
+
+                this.position = value;
             }
         }
+
         public Texture2D Image
         {
-            get
-            {
-                return this.image;
-            }
-            
+            get { return this.image; }
+            protected set { this.image = value; }
         }
-        #region IDrawObject Members
 
+        // Methods
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(this.image, this.position, Color.White);
         }
-
-        #endregion
     }
 }

@@ -4,21 +4,30 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
    
-    class Unit : ObjectRPG, IDrawObject, IActions
+    public abstract class Unit : ObjectRPG, IDrawObject, IActions
     {
-        protected string name;
-        protected int health;
-        protected int damage;
+        // Fields
+        private string name;
+        private int health;
+        private int damage;        
+        //protected bool isAlive;
         //protected Vector2 position;
         //protected Texture2D image; 
-        protected bool isAlive;
 
+        // Constructor
+        protected Unit(string name, int health, int damage, Vector2 position)
+        {
+            this.Name = name;
+            this.Health = health;
+            this.Damage = damage;
+            this.Position = position;
+            this.IsAlive = true;
+        }
+
+        // Properties
         public string Name
         {
-            get 
-            { 
-                return name; 
-            }
+            get { return name; }
             set 
             {
                 if (string.IsNullOrEmpty(value))
@@ -31,10 +40,7 @@
 
         public int Health
         {
-            get
-            {
-                return health;
-            }
+            get { return health;}
             set
             {
                 if (value <= 1)
@@ -44,12 +50,10 @@
                 health = value;
             }
         }
+
         public int Damage
         {
-            get
-            {
-                return damage;
-            }
+            get { return damage; }
             set
             {
                 if (value <= 1)
@@ -59,6 +63,9 @@
                 damage = value;
             }
         }
+
+        public bool IsAlive { get; private set; }
+
         //public Vector2 Position
         //{
         //    get
@@ -90,26 +97,20 @@
 
 
         //методи от интерфейса IActions
-        public void IsAlive(int health)
-        {
-            if (health <= 0)
-            {
-                this.isAlive = false;
-            }
-        }
         public void DisplayHealth(int health)
         { 
             
         }
+
         public void TakeDamage(int damage)
         {
             this.Health -= damage;
         }
+
         public void Attack(int damage)
         { 
             //
         }
-
 
         
     }
