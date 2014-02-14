@@ -38,15 +38,6 @@
       <Time>2014-02-12T01:05:12.3396992+02:00</Time>
     </Item>
     <Item>
-      <Source>Fonts\WideLatin.spritefont</Source>
-      <Name>Fonts\WideLatin</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\Fonts\WideLatin.xnb</Output>
-      <Time>2014-02-10T14:29:52.0466029+02:00</Time>
-    </Item>
-    <Item>
       <Source>stoneGolem.png</Source>
       <Name>stoneGolem</Name>
       <Importer>TextureImporter</Importer>
@@ -63,6 +54,24 @@
       <Options>None</Options>
       <Output>C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\heroAnimation.xnb</Output>
       <Time>2014-02-14T12:55:29.8430058+02:00</Time>
+    </Item>
+    <Item>
+      <Source>some-button.png</Source>
+      <Name>some-button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\some-button.xnb</Output>
+      <Time>2014-02-14T18:04:27.4092939+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\WideLatin.spritefont</Source>
+      <Name>Fonts\WideLatin</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\Fonts\WideLatin.xnb</Output>
+      <Time>2014-02-10T14:29:52.0466029+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -19,64 +19,64 @@
 
         public Images()
         {
-            Path = Text = string.Empty;
-            FontName = "Fonts/WideLatin";
-            Position = Vector2.Zero;
-            Scale = Vector2.One;
-            Alpha = 1.0f;
-            SourceRect = Rectangle.Empty;
+            this.Path = this.Text = string.Empty;
+            this.FontName = "Fonts/WideLatin";
+            this.Position = Vector2.Zero;
+            this.Scale = Vector2.One;
+            this.Alpha = 1.0f;
+            this.SourceRect = Rectangle.Empty;
         }
 
         public void LoadContent()
         {
-            content = new ContentManager(ScreenManager.Instance.screenManagerContent.ServiceProvider, "Content");
+            this.content = new ContentManager(ScreenManager.Instance.screenManagerContent.ServiceProvider, "Content");
             if (Path != string.Empty)
             {
-                Texture = content.Load<Texture2D>(Path);
+                this.Texture = content.Load<Texture2D>(Path);
             }
-            font = content.Load<SpriteFont>(FontName);
+            this.font = content.Load<SpriteFont>(FontName);
 
             var sizes = Vector2.Zero;
 
             if (Texture != null)
             {
-                sizes.X += Texture.Width;
-                sizes.X += font.MeasureString(Text).X;
+                sizes.X += this.Texture.Width;
+                sizes.X += this.font.MeasureString(Text).X;
             }
 
             if (Texture != null)
             {
-                sizes.Y = System.Math.Max(Texture.Height, font.MeasureString(Text).Y);
+                sizes.Y = System.Math.Max(this.Texture.Height, this.font.MeasureString(Text).Y);
             }
             else
             {
-                sizes.Y = font.MeasureString(Text).Y;
+                sizes.Y = this.font.MeasureString(Text).Y;
             }
 
-            if (SourceRect == Rectangle.Empty)
+            if (this.SourceRect == Rectangle.Empty)
             {
-                SourceRect = new Rectangle(0, 0, (int)sizes.X, (int)sizes.Y);
+                this.SourceRect = new Rectangle(0, 0, (int)sizes.X, (int)sizes.Y);
             }
 
-            renderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice, (int)sizes.X, (int)sizes.Y);
+            this.renderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice, (int)sizes.X, (int)sizes.Y);
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(renderTarget);
 
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
             ScreenManager.Instance.SpriteBatch.Begin();
             if (Texture != null)
             {
-                ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);
+                ScreenManager.Instance.SpriteBatch.Draw(this.Texture, Vector2.Zero, Color.White);
             }
-            ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero, Color.White);
+            ScreenManager.Instance.SpriteBatch.DrawString(this.font, this.Text, Vector2.Zero, Color.White);
             ScreenManager.Instance.SpriteBatch.End();
 
-            Texture = renderTarget;
+            this.Texture = this.renderTarget;
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
         }
 
         public void UnLoadContent()
         {
-            content.Unload();
+            this.content.Unload();
         }
 
         public void Update(GameTime gameTime)
@@ -85,8 +85,8 @@
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            origin = new Vector2(SourceRect.Width / 2, SourceRect.Height / 2);
-            spriteBatch.Draw(Texture, Position + origin, SourceRect, Color.White * Alpha, 0.0f, origin, Scale, SpriteEffects.None, 0.0f);
+            this.origin = new Vector2(this.SourceRect.Width / 2, this.SourceRect.Height / 2);
+            spriteBatch.Draw(this.Texture, this.Position + this.origin, this.SourceRect, Color.White * Alpha, 0.0f, this.origin, this.Scale, SpriteEffects.None, 0.0f);
         }
     }
 }

@@ -1,10 +1,11 @@
 namespace FyodorDostoevskyRPG
 {
-    using FyodorDostoevskyRPG.ScreenManagement;
-
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
+
+    using FyodorDostoevskyRPG.ScreenManagement;
+
 
     public class FyodorsAdventure : Game
     {
@@ -16,9 +17,9 @@ namespace FyodorDostoevskyRPG
 
         public FyodorsAdventure()
         {
-            graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 600;
+            this.graphics = new GraphicsDeviceManager(this);
+            this.graphics.PreferredBackBufferWidth = 800;
+            this.graphics.PreferredBackBufferHeight = 600;
 
             Content.RootDirectory = "Content";
             this.IsMouseVisible = false;
@@ -41,9 +42,9 @@ namespace FyodorDostoevskyRPG
         /// </summary>
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
-            ScreenManager.Instance.SpriteBatch = spriteBatch;
+            this.spriteBatch = new SpriteBatch(this.GraphicsDevice);
+            ScreenManager.Instance.GraphicsDevice = this.GraphicsDevice;
+            ScreenManager.Instance.SpriteBatch = this.spriteBatch;
 
 
             this.customCursor = Content.Load<Texture2D>("mouseCursor");
