@@ -1,18 +1,20 @@
 ﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
     using System;
-    using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Content;
-    using Microsoft.Xna.Framework.Graphics;
 
     public abstract class Weapon : Item
     {
         protected int damage;
+        protected double crit;
+        protected bool special;
 
         public int Damage
         {
-            get { return this.damage; }
-            set 
+            get
+            {
+                return this.damage;
+            }
+            set
             {
                 if (value < 0)
                 {
@@ -25,22 +27,28 @@
             }
         }
 
-        protected double crit;
         public double Crit
         {
-            get { return this.crit; }
-            set 
+            get
             {
-                this.crit = value; 
+                return this.crit;
+            }
+            set
+            {
+                this.crit = value;
             }
         }
 
-        protected bool special;
         public bool Special
         {
-            get { return this.special; }
-            set { this.special = value; }
+            get
+            {
+                return this.special;
+            }
+            set
+            {
+                this.special = value;
+            }
         }
-        
     }
 }

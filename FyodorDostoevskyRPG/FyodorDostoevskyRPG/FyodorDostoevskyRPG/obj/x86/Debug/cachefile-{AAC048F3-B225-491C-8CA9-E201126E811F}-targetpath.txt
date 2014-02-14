@@ -1,0 +1,7 @@
+Content\MainMenuImage.xnb
+Content\TitleImage.xnb
+Content\mouseCursor.xnb
+Content\dragonImage.xnb
+Content\Fonts\WideLatin.xnb
+Content\stoneGolem.xnb
+Content\heroAnimation.xnb

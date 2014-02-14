@@ -4,7 +4,6 @@
 
     public interface IDrawObject
     {
-       void Draw(SpriteBatch spriteBatch);
-        
+        void Draw(SpriteBatch spriteBatch);
     }
 }

@@ -2,10 +2,8 @@
 {
     using System;
     using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Content;
-    using Microsoft.Xna.Framework.Graphics;
 
-    class Sword : Weapon, IDrawObject
+    internal class Sword : Weapon, IDrawObject
     {
         public Sword()
         {
@@ -13,7 +11,6 @@
         }
         public Sword(string pathToImage, Vector2 position, bool isUsed , int damage, double crit)
         {
-            //this.texture2DPath = pathToImage;
             this.Position = position;
             this.isUsed = isUsed;
             this.damage = damage;

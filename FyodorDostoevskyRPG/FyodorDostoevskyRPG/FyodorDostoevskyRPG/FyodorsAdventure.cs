@@ -1,6 +1,5 @@
 namespace FyodorDostoevskyRPG
 {
-    using System;
     using FyodorDostoevskyRPG.ScreenManagement;
 
     using Microsoft.Xna.Framework;
@@ -9,10 +8,11 @@ namespace FyodorDostoevskyRPG
 
     public class FyodorsAdventure : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
-        Texture2D customCursor;
+
+        private Texture2D customCursor;
 
         public FyodorsAdventure()
         {
@@ -32,7 +32,6 @@ namespace FyodorDostoevskyRPG
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             base.Initialize();
         }
 
@@ -42,12 +41,11 @@ namespace FyodorDostoevskyRPG
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ScreenManager.Instance.GraphicsDevice = GraphicsDevice;
             ScreenManager.Instance.SpriteBatch = spriteBatch;
 
-            // TODO: use this.Content to load your game content here
+
             this.customCursor = Content.Load<Texture2D>("mouseCursor");
             ScreenManager.Instance.LoadContent(this.Content);
         }
@@ -58,7 +56,7 @@ namespace FyodorDostoevskyRPG
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            Content.Unload();
         }
 
         /// <summary>
@@ -68,7 +66,6 @@ namespace FyodorDostoevskyRPG
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // TODO: Add your update logic here
             base.Update(gameTime);
             InputManager.Instance.Update();
             ScreenManager.Instance.Update(gameTime);
@@ -81,14 +78,10 @@ namespace FyodorDostoevskyRPG
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
-            // TODO: Add your drawing code here
             this.spriteBatch.Begin();
             ScreenManager.Instance.Draw(this.spriteBatch);
             this.spriteBatch.Draw(this.customCursor, new Vector2(Mouse.GetState().X, Mouse.GetState().Y), Color.White);
             this.spriteBatch.End();
-
-            base.Draw(gameTime);
         }
     }
 }

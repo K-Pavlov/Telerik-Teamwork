@@ -8,7 +8,6 @@
     {
         protected ContentManager baseScreenContentManager;
 
-        // Methods -> trqbva da se override ot vseki otdelen ekran
         public virtual void LoadContent(ContentManager content)
         {
             this.baseScreenContentManager = new ContentManager(content.ServiceProvider, "Content");

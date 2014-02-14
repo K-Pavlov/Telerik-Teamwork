@@ -1,7 +1,6 @@
 ﻿namespace FyodorDostoevskyRPG.ScreenManagement
-{    
+{
     using System.Collections.Generic;
-    
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
@@ -13,36 +12,29 @@
         public ContentManager screenManagerContent;
         private Stack<BaseScreen> screenStack = new Stack<BaseScreen>();
         private BaseScreen currentScreen = new TitleScreen();
-        private Vector2 screenSize;
 
         public GraphicsDevice GraphicsDevice;
         public SpriteBatch SpriteBatch;
 
-        #region Constructors
-        // private za da ne moje da se instancira poveche ot vednuj
-        private ScreenManager() { }
+        private ScreenManager()
+        {
+        }
 
         static ScreenManager()
         {
             ScreenManager.instance = new ScreenManager();
         }
-        #endregion
 
-        #region Properties
-        // za dostypvane na instanciqta i goleminata na segashniq ekran
         public static ScreenManager Instance
         {
-            get { return ScreenManager.instance; }
+            get
+            {
+                return ScreenManager.instance;
+            }
         }
 
-        public Vector2 ScreenSize
-        {
-            get { return this.screenSize; }
-            set { this.screenSize = value; }
-        }
-        #endregion
+        public Vector2 ScreenSize { get; set; }
 
-        // Methods
         public void LoadScreen(BaseScreen screen)
         {
             this.screenStack.Push(screen);
@@ -53,7 +45,6 @@
 
         public void UnloadScreen(BaseScreen screen)
         {
-
         }
 
         public void LoadContent(ContentManager content)

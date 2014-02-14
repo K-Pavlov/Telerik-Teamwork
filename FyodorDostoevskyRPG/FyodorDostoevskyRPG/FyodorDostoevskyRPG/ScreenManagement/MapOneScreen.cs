@@ -5,15 +5,12 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
-    using Microsoft.Xna.Framework.Input;
-
-    using FyodorDostoevskyRPG.GameObject.GameItems;
     using FyodorDostoevskyRPG.GameObject.GameUnits;
 
-    class MapOneScreen : BaseScreen
+    internal class MapOneScreen : BaseScreen
     {
-        Hero braveHero;
-        Dragon[] dragonOnThisMap;
+        private Hero braveHero;
+        private Dragon[] dragonOnThisMap;
 
         public override void LoadContent(ContentManager content)
         {
@@ -24,8 +21,7 @@
                 new Dragon("Gosho", 100, 10, new Vector2(200, 400), true),
                 new Dragon("Tosho", 100, 10, new Vector2(600, 200), true),
                 new Dragon("Mosho", 100, 10, new Vector2(550, 500), true),
-                new Dragon("Shosho", 100, 10, new Vector2(400, 350), true),
-            };
+                new Dragon("Shosho", 100, 10, new Vector2(400, 350), true) };
             braveHero = new Hero("DragonSlayer", 500, 10, 14, new Vector2(10, 10));
         }
 
@@ -39,7 +35,6 @@
             this.braveHero.HandleInput();
         }
 
-        // tuk tryabwa da doidat proverkite dali nashiqt geroi e stupil wurhu neshto
         public override void Update(GameTime gameTime)
         {
             this.braveHero.HandleInput();

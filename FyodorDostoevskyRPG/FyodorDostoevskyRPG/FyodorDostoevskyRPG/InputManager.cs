@@ -5,26 +5,27 @@
 
     public class InputManager
     {
-        // Fields
         private static InputManager instance;
         private MouseState currentMouseState, previousMouseState;
         private KeyboardState currentKeyboardState, previousKeyboardState;
 
-        // Constructor
-        private InputManager() { }
+        private InputManager()
+        {
+        }
 
         static InputManager()
         {
             InputManager.instance = new InputManager();
         }
 
-        // Properties
         public static InputManager Instance
         {
-            get { return InputManager.instance; }
+            get
+            {
+                return InputManager.instance;
+            }
         }
 
-        // Methods
         public void Update()
         {
             this.previousMouseState = currentMouseState;
@@ -35,7 +36,10 @@
 
         public Vector2 MousePosition
         {
-            get { return new Vector2(currentMouseState.X, currentMouseState.Y); }
+            get
+            {
+                return new Vector2(currentMouseState.X, currentMouseState.Y);
+            }
         }
 
         public bool MouseLeftButtonPressed()

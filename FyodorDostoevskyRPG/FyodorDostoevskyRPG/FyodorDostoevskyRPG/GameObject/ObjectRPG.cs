@@ -2,18 +2,18 @@
 {
     using System;
     using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Graphics;    
+    using Microsoft.Xna.Framework.Graphics;
 
     public abstract class ObjectRPG : IDrawObject
     {
-        // Fields
         private Vector2 position;
-        private Texture2D image;
 
-        // Properties
         public Vector2 Position
         {
-            get { return this.position; }
+            get
+            {
+                return this.position;
+            }
             protected set
             {
                 if ((value.X < 0) || (value.X > 800) || (value.Y < 0) || (value.Y > 600))
@@ -25,16 +25,11 @@
             }
         }
 
-        public Texture2D Image
-        {
-            get { return this.image; }
-            protected set { this.image = value; }
-        }
+        public Texture2D Image { get; protected set; }
 
-        // Methods
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.image, this.position, Color.White);
+            spriteBatch.Draw(this.Image, this.position, Color.White);
         }
     }
 }

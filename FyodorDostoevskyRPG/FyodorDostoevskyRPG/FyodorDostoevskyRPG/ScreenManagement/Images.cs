@@ -1,6 +1,5 @@
 ﻿namespace FyodorDostoevskyRPG.ScreenManagement
 {
-    using System.Xml.Serialization;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
@@ -13,14 +12,14 @@
         public Rectangle SourceRect;
 
         public Texture2D Texture;
-        Vector2 origin;
-        ContentManager content;
-        RenderTarget2D renderTarget;
-        SpriteFont font;
+        private Vector2 origin;
+        private ContentManager content;
+        private RenderTarget2D renderTarget;
+        private SpriteFont font;
 
         public Images()
         {
-            Path =Text= string.Empty;
+            Path = Text = string.Empty;
             FontName = "Fonts/WideLatin";
             Position = Vector2.Zero;
             Scale = Vector2.One;
@@ -37,7 +36,7 @@
             }
             font = content.Load<SpriteFont>(FontName);
 
-            Vector2 sizes = Vector2.Zero;
+            var sizes = Vector2.Zero;
 
             if (Texture != null)
             {
@@ -59,22 +58,20 @@
                 SourceRect = new Rectangle(0, 0, (int)sizes.X, (int)sizes.Y);
             }
 
-            renderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice,(int) sizes.X,(int) sizes.Y);
+            renderTarget = new RenderTarget2D(ScreenManager.Instance.GraphicsDevice, (int)sizes.X, (int)sizes.Y);
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(renderTarget);
 
             ScreenManager.Instance.GraphicsDevice.Clear(Color.Transparent);
             ScreenManager.Instance.SpriteBatch.Begin();
-            if (Texture!=null)
+            if (Texture != null)
             {
                 ScreenManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);
-
             }
             ScreenManager.Instance.SpriteBatch.DrawString(font, Text, Vector2.Zero, Color.White);
             ScreenManager.Instance.SpriteBatch.End();
 
             Texture = renderTarget;
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
-        
         }
 
         public void UnLoadContent()
@@ -84,7 +81,6 @@
 
         public void Update(GameTime gameTime)
         {
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
