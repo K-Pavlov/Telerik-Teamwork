@@ -41,7 +41,7 @@
             Vector2 mousePosition = InputManager.Instance.MousePosition;
             if ((mousePosition.X > startButtonPosition.X && mousePosition.Y > startButtonPosition.Y)
                 && (mousePosition.X < startGameButton.Width + startButtonPosition.X
-                && mousePosition.Y < startGameButton.Width + startButtonPosition.Y))
+                && mousePosition.Y < startGameButton.Height + startButtonPosition.Y))
             {
                 startButtonColor = new Color(300, 0, 0);
                 if (InputManager.Instance.MouseLeftButtonPressed())

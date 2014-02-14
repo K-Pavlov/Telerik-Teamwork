@@ -14,7 +14,7 @@
         public override void LoadContent(ContentManager content)
         {
             base.LoadContent(content);
-            this.logo = this.baseScreenContentManager.Load<Texture2D>("titleImage");
+            this.logo = this.baseScreenContentManager.Load<Texture2D>("TitleImage");
         }
 
         public override void UnloadContent()
