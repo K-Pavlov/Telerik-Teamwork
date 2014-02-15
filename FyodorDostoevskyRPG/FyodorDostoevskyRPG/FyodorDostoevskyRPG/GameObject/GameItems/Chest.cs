@@ -17,15 +17,15 @@
             int whatToGet = random.Next(1, 4);
             if (whatToGet == 1)
             {
-                return new Sword(new Vector2(this.Position.X,this.Position.Y), 20, 40, true);
+                return new Sword(new Vector2(this.Position.X,this.Position.Y), 20, 40);
             }
             else if (whatToGet == 2)
             {
-                return new Flail(new Vector2(this.Position.X, this.Position.Y), 25, 50, false);
+                return new Flail(new Vector2(this.Position.X, this.Position.Y), 25, 50);
             }
             else
             {
-                return new Shield(new Vector2(this.Position.X, this.Position.Y), 10, 3, false);
+                return new Shield(new Vector2(this.Position.X, this.Position.Y), 10, 3);
             }
         }
     }

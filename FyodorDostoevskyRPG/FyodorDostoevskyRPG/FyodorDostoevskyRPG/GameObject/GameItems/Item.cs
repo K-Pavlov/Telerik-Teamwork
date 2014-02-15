@@ -1,8 +1,8 @@
 ﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
     using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+    using Microsoft.Xna.Framework.Graphics;
+    using System;
 
     public abstract class Item : ObjectRPG, IDrawObject
     {

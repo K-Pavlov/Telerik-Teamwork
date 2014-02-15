@@ -8,14 +8,12 @@
     {
         protected int damage;
         protected double crit;
-        protected bool special;
 
-        public Weapon(Texture2D image, Vector2 position, int dmg, double crit, bool special)
+        public Weapon(Texture2D image, Vector2 position, int dmg, double crit)
             : base(image, position)
         {
             this.Damage = dmg;
             this.Crit = crit;
-            this.Special = special;
         }
 
         public int Damage
@@ -46,18 +44,6 @@
             set
             {
                 this.crit = value;
-            }
-        }
-
-        public bool Special
-        {
-            get
-            {
-                return this.special;
-            }
-            set
-            {
-                this.special = value;
             }
         }
     }

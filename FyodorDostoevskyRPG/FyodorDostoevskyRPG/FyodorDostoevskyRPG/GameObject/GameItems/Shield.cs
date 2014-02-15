@@ -4,18 +4,15 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
-    internal class Shield : Item, IDrawObject
+    internal class Shield : Item, IDrawObject, ISpecial<double>
     {
         protected double defense;
-        protected double block;
         protected bool special;
 
-        public Shield(Vector2 position, double defense, double block, bool special)
+        public Shield(Vector2 position, double defense, double block)
             : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("karitnka"), position)
         {
             this.Defense = defense;
-            this.Block = block;
-            this.Special = special;
         }
 
         public double Defense
@@ -30,28 +27,9 @@
             }
         }
 
-        public double Block
+        public double ActivateSpecial()
         {
-            get
-            {
-                return this.block;
-            }
-            set
-            {
-                this.block = value;
-            }
-        }
-
-        public bool Special
-        {
-            get
-            {
-                return this.special;
-            }
-            set
-            {
-                this.special = value;
-            }
+            return 0;
         }
     }
 }

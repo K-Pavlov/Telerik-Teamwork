@@ -78,6 +78,7 @@
     <Compile Include="Button.cs" />
     <Compile Include="GameObject\GameItems\Chest.cs" />
     <Compile Include="GameObject\GameItems\Flail.cs" />
+    <Compile Include="GameObject\GameItems\ISpecial.cs" />
     <Compile Include="GameObject\GameItems\Shield.cs" />
     <Compile Include="GameObject\IDrawObject.cs" />
     <Compile Include="GameObject\ObjectRPG.cs" />
