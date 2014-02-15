@@ -28,7 +28,7 @@
 
         public double ActivateSpecial()
         {
-            return 0;
+            return this.Defense + 60;
         }
     }
 }
