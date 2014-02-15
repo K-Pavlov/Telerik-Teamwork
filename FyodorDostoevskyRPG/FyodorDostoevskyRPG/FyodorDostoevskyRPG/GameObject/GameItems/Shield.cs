@@ -9,7 +9,7 @@
         protected double defense;
 
         public Shield(Vector2 position, double defense)
-            : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("karitnka"), position)
+            : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("shield"), position)
         {
             this.Defense = defense;
         }

@@ -8,7 +8,7 @@
     {
         Random random = new Random();
         public Sword(Vector2 position, int dmg, double crit)
-            : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("karitnka"), 
+            : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("sword"), 
             position, dmg, crit)
         {
         }
