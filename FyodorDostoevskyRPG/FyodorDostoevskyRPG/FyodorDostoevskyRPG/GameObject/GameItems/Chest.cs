@@ -25,7 +25,7 @@
             }
             else
             {
-                return new Shield(new Vector2(this.Position.X, this.Position.Y), 10, 3);
+                return new Shield(new Vector2(this.Position.X, this.Position.Y), 10);
             }
         }
     }

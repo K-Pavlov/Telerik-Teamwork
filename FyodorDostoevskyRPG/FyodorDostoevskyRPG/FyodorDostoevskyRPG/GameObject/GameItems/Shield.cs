@@ -7,9 +7,8 @@
     internal class Shield : Item, IDrawObject, ISpecial<double>
     {
         protected double defense;
-        protected bool special;
 
-        public Shield(Vector2 position, double defense, double block)
+        public Shield(Vector2 position, double defense)
             : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("karitnka"), position)
         {
             this.Defense = defense;

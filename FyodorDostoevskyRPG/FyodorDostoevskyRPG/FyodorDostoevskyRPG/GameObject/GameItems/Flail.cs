@@ -2,7 +2,7 @@
 {
     using System;
     using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Graphics;
 
     internal class Flail : Weapon, IDrawObject, ISpecial<int>
     {
