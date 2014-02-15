@@ -2,65 +2,31 @@
 {
     using System;
     using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
 
     internal class Chest : Item
     {
-        protected int damage;
-        public int Damage
-        {
-            get
-            {
-                return this.damage;
-            }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Can't be negative");
-                }
-                else
-                {
-                    this.damage = value;
-                }
-            }
+        Random random = new Random();
+        public Chest(Vector2 position)
+            :base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("karitnka"), position) 
+        {            
         }
 
-        protected double crit;
-        public double Crit
+        public Item RandomItem()
         {
-            get
+            int whatToGet = random.Next(1, 4);
+            if (whatToGet == 1)
             {
-                return this.crit;
+                return new Sword(new Vector2(this.Position.X,this.Position.Y), 20, 40, true);
             }
-            set
+            else if (whatToGet == 2)
             {
-                this.crit = value;
+                return new Flail(new Vector2(this.Position.X, this.Position.Y), 25, 50, false);
             }
-        }
-
-        protected bool special;
-        public bool Special
-        {
-            get
+            else
             {
-                return this.special;
+                return new Shield(new Vector2(this.Position.X, this.Position.Y), 10, 3, false);
             }
-            set
-            {
-                this.special = value;
-            }
-        }
-
-        public Chest()
-        {
-            this.special = true;
-        }
-
-        public Chest(string pathToImage, Vector2 position, bool isUsed, int damage, double crit)
-        {
-            this.isUsed = isUsed;
-            this.damage = damage;
-            this.crit = crit;
         }
     }
 }

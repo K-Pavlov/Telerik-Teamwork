@@ -26,3 +26,6 @@ C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDosto
 C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.exe
 C:\Users\Tanya\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.pdb
+C:\Users\kalo\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.csprojResolveAssemblyReference.cache
+C:\Users\kalo\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\kalo\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.exe

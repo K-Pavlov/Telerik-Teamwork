@@ -2,44 +2,20 @@
 {
     using System;
     using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
 
-    internal class Shield : Item
+    internal class Shield : Item, IDrawObject
     {
-        protected int damage;
         protected double defense;
         protected double block;
         protected bool special;
 
-        public Shield()
+        public Shield(Vector2 position, double defense, double block, bool special)
+            : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("karitnka"), position)
         {
-            this.special = true;
-        }
-
-        public Shield(string pathToImage, Vector2 position, bool isUsed, int damage, double defense, double block)
-        {
-            this.isUsed = isUsed;
-            this.damage = damage;
-            this.defense = defense;
-            this.block = block;
-        }
-
-        public int Damage
-        {
-            get
-            {
-                return this.damage;
-            }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Can't be negative");
-                }
-                else
-                {
-                    this.damage = value;
-                }
-            }
+            this.Defense = defense;
+            this.Block = block;
+            this.Special = special;
         }
 
         public double Defense

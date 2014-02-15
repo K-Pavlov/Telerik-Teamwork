@@ -13,7 +13,9 @@
         public Weapon(Texture2D image, Vector2 position, int dmg, double crit, bool special)
             : base(image, position)
         {
-            /////////
+            this.Damage = dmg;
+            this.Crit = crit;
+            this.Special = special;
         }
 
         public int Damage
