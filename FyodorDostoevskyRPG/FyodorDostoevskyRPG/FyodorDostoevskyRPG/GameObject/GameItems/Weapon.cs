@@ -1,5 +1,7 @@
 ﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
     using System;
 
     public abstract class Weapon : Item
@@ -7,6 +9,12 @@
         protected int damage;
         protected double crit;
         protected bool special;
+
+        public Weapon(Texture2D image, Vector2 position, int dmg, double crit, bool special)
+            : base(image, position)
+        {
+            /////////
+        }
 
         public int Damage
         {

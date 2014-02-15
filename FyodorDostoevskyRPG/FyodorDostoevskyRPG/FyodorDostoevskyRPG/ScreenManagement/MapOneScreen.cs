@@ -7,6 +7,7 @@
     using Microsoft.Xna.Framework.Graphics;
 
     using FyodorDostoevskyRPG.GameObject.GameUnits;
+    using FyodorDostoevskyRPG.GameObject.GameItems;
 
     internal class MapOneScreen : BaseScreen
     {

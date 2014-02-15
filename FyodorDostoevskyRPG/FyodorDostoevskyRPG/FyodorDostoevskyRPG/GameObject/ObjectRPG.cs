@@ -8,6 +8,13 @@
     {
         private Vector2 position;
 
+        // Constructor
+        protected ObjectRPG(Texture2D image, Vector2 position)
+        {
+            this.Image = image;
+            this.Position = position;
+        }
+
         public Vector2 Position
         {
             get
