@@ -24,7 +24,7 @@
                 new Dragon("Tosho", 100, 10, new Vector2(600, 200), true),
                 new Dragon("Mosho", 100, 10, new Vector2(550, 500), true),
                 new Dragon("Shosho", 100, 10, new Vector2(400, 350), true) };
-            braveHero = new Hero(new Vector2(10, 10),"DragonSlayer", 500, 10, 14);
+            braveHero = new Hero(new Vector2(10, 10), "DragonSlayer", 500, 10, 14);
         }
 
         public override void UnloadContent()
@@ -40,7 +40,16 @@
         public override void Update(GameTime gameTime)
         {
             this.braveHero.HandleInput();
+            foreach (var dragon in dragonOnThisMap)
+            {
+                if ((braveHero.Position.X > dragon.Position.X - 20 && braveHero.Position.X < dragon.Position.X + dragon.Image.Width) &&
+                   (braveHero.Position.Y > dragon.Position.Y && braveHero.Position.Y < dragon.Position.Y + dragon.Image.Height))
+                {
+                    ScreenManager.Instance.LoadScreen(new BattleScreen(dragon));
+                }
+            }
             this.braveHero.Update(gameTime);
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
