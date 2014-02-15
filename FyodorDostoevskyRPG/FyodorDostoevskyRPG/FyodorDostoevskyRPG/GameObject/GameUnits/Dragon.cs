@@ -9,9 +9,9 @@
     internal class Dragon : Monster, IDrawObject
     {
         public Dragon(string name, int health, int damage, Vector2 position, bool ranged)
-            : base(name, health, damage, position, ranged)
+            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("dragonImage"), 
+            position, name, health, damage, ranged)
         {
-            this.Image = ScreenManager.Instance.screenManagerContent.Load<Texture2D>("dragonImage");
         }
     }
 }

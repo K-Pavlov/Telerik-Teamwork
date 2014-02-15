@@ -2,6 +2,7 @@
 {
     using System;
     using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
 
     public abstract class Unit : ObjectRPG, IDrawObject, IActions
     {
@@ -9,12 +10,12 @@
         private int health;
         private int damage;
 
-        protected Unit(string name, int health, int damage, Vector2 position)
+        protected Unit(Texture2D image, Vector2 position, string name, int health, int damage)
+            :base(image, position)
         {
             this.Name = name;
             this.Health = health;
             this.Damage = damage;
-            this.Position = position;
             this.IsAlive = true;
         }
 

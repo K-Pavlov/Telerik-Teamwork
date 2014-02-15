@@ -24,7 +24,7 @@
                 new Dragon("Tosho", 100, 10, new Vector2(600, 200), true),
                 new Dragon("Mosho", 100, 10, new Vector2(550, 500), true),
                 new Dragon("Shosho", 100, 10, new Vector2(400, 350), true) };
-            braveHero = new Hero("DragonSlayer", 500, 10, 14, new Vector2(10, 10));
+            braveHero = new Hero(new Vector2(10, 10),"DragonSlayer", 500, 10, 14);
         }
 
         public override void UnloadContent()

@@ -80,15 +80,16 @@
     <Compile Include="GameObject\GameItems\Flail.cs" />
     <Compile Include="GameObject\GameItems\ISpecial.cs" />
     <Compile Include="GameObject\GameItems\Shield.cs" />
-    <Compile Include="GameObject\IDrawObject.cs" />
-    <Compile Include="GameObject\ObjectRPG.cs" />
     <Compile Include="GameObject\GameUnits\Dragon.cs" />
     <Compile Include="GameObject\GameUnits\Golem.cs" />
     <Compile Include="GameObject\GameUnits\Hero.cs" />
     <Compile Include="GameObject\GameUnits\IActions.cs" />
+    <Compile Include="GameObject\GameUnits\Monster.cs" />
+    <Compile Include="GameObject\GameUnits\Unit.cs" />
+    <Compile Include="GameObject\IDrawObject.cs" />
+    <Compile Include="GameObject\ObjectRPG.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="GameObject\GameItems\Item.cs" />
-    <Compile Include="GameObject\GameUnits\Monster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenManagement\BaseScreen.cs" />
     <Compile Include="ScreenManagement\Images.cs" />
@@ -99,7 +100,6 @@
     <Compile Include="StartGame.cs" />
     <Compile Include="FyodorsAdventure.cs" />
     <Compile Include="GameObject\GameItems\Sword.cs" />
-    <Compile Include="GameObject\GameUnits\Unit.cs" />
     <Compile Include="GameObject\GameItems\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>

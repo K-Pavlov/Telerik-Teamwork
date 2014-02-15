@@ -13,18 +13,16 @@
         private Vector2 target, direction;
         private Animation heroAnimation;
 
-        public Hero(string name, int health, int damageMin, int damageMax, Vector2 position)
-            : base(name, health, damageMin, position)
+        public int DamageMax { get; set; }
+
+        public Hero(Vector2 position, string name, int health, int damageMin, int damageMax)
+            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("heroAnimation"), position, name, health, damageMin)
         {
             this.DamageMax = damageMax;
-
-            this.Image = ScreenManager.Instance.screenManagerContent.Load<Texture2D>("heroAnimation");
             this.heroAnimation = new Animation(position, new Vector2(5, 4));
             this.heroAnimation.Image = this.Image;
             this.heroSpeed = 1.4f;
         }
-
-        public int DamageMax { get; set; }
 
         public void HandleInput()
         {

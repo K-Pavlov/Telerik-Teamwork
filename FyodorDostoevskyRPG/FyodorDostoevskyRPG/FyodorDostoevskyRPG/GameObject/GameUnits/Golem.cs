@@ -8,10 +8,10 @@
 
     internal class Golem : Monster, IDrawObject
     {
-        public Golem(string name, int health, int damage, Vector2 position, bool ranged, Texture2D image)
-            : base(name, health, damage, position, ranged)
+        public Golem(string name, int health, int damage, Vector2 position, bool ranged)
+            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("stoneGolem"), 
+            position, name, health, damage, ranged)
         {
-            this.Image = ScreenManager.Instance.screenManagerContent.Load<Texture2D>("stoneGolem");
         }
     }
 }
