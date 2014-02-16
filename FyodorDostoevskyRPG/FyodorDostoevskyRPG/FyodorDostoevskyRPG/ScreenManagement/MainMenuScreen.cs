@@ -7,20 +7,24 @@
 
     public class MainMenuScreen : BaseScreen
     {
-        private KeyboardState currentKey, previousKey;
-        private Texture2D logo;
+        // Fields
+        private Texture2D mainMenuBackground;
 
-        // Start button
-        private Texture2D startGameButton;
-        private Vector2 startButtonPosition = new Vector2(150, 100);
-        private Color startButtonColor = new Color(255, 255, 255);
+        private Texture2D startButtonImage;        
+        private Vector2 startButtonPosition;
+        private Rectangle startButtonRect;
+        private Color startButtonColor;
 
-
+        // Methods
         public override void LoadContent(ContentManager content)
         {
             base.LoadContent(content);
-            this.logo = this.baseScreenContentManager.Load<Texture2D>("MainMenuImage");
-            this.startGameButton = this.baseScreenContentManager.Load<Texture2D>("some-button");
+            this.mainMenuBackground = this.baseScreenContentManager.Load<Texture2D>("MainMenuImage");
+
+            this.startButtonImage = this.baseScreenContentManager.Load<Texture2D>("some-button");
+            this.startButtonPosition = new Vector2(150, 100);
+            this.startButtonRect = new Rectangle((int)this.startButtonPosition.X, (int)this.startButtonPosition.Y, this.startButtonImage.Width, this.startButtonImage.Height);
+            this.startButtonColor = new Color(255, 255, 255);
         }
 
         public override void UnloadContent()
@@ -30,18 +34,7 @@
 
         public override void Update(GameTime gameTime)
         {
-            this.previousKey = this.currentKey;
-            this.currentKey = Keyboard.GetState();
-
-            if (this.previousKey.IsKeyDown(Keys.Space) && this.currentKey.IsKeyUp(Keys.Space))
-            {
-                ScreenManager.Instance.LoadScreen(new MapOneScreen());
-            }
-
-            Vector2 mousePosition = InputManager.Instance.MousePosition;
-            if ((mousePosition.X > startButtonPosition.X && mousePosition.Y > startButtonPosition.Y)
-                && (mousePosition.X < startGameButton.Width + startButtonPosition.X
-                && mousePosition.Y < startGameButton.Height + startButtonPosition.Y))
+            if (this.startButtonRect.Intersects(InputManager.Instance.MouseRectanle))
             {
                 startButtonColor = new Color(300, 0, 0);
                 if (InputManager.Instance.MouseLeftButtonPressed())
@@ -59,8 +52,8 @@
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(logo, new Vector2(0, 0), Color.White);
-            spriteBatch.Draw(startGameButton, startButtonPosition, startButtonColor);
+            spriteBatch.Draw(mainMenuBackground, new Vector2(0, 0), Color.White);
+            spriteBatch.Draw(startButtonImage, startButtonPosition, startButtonColor);
         }
     }
 }
