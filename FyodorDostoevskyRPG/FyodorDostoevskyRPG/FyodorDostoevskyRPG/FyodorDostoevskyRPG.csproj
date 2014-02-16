@@ -75,7 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
-    <Compile Include="Button.cs" />
+    <Compile Include="ButtonManagement\Button.cs" />
     <Compile Include="GameObject\GameItems\Chest.cs" />
     <Compile Include="GameObject\GameItems\Flail.cs" />
     <Compile Include="GameObject\GameItems\ISpecial.cs" />
@@ -98,7 +98,7 @@
     <Compile Include="ScreenManagement\MapOneScreen.cs" />
     <Compile Include="ScreenManagement\ScreenManager.cs" />
     <Compile Include="ScreenManagement\TitleScreen.cs" />
-    <Compile Include="StartButton.cs" />
+    <Compile Include="ButtonManagement\StartButton.cs" />
     <Compile Include="StartGame.cs" />
     <Compile Include="FyodorsAdventure.cs" />
     <Compile Include="GameObject\GameItems\Sword.cs" />

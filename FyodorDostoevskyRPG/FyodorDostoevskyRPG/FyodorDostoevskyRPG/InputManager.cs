@@ -47,12 +47,22 @@
 
         public bool MouseLeftButtonPressed()
         {
-            return this.currentMouseState.LeftButton == ButtonState.Pressed && this.previousMouseState.LeftButton == ButtonState.Released;
+            return this.previousMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed;
+        }
+
+        public bool MouseLeftButtonPressedInverted()
+        {
+            return this.previousMouseState.LeftButton == ButtonState.Pressed && this.currentMouseState.LeftButton == ButtonState.Released;
         }
 
         public bool MouseLeftButtonDown()
         {
             return this.currentMouseState.LeftButton == ButtonState.Pressed;
+        }
+
+        public bool MouseLeftButtonUp()
+        {
+            return this.currentMouseState.LeftButton == ButtonState.Released;
         }
 
         public bool KeyPressed(Keys k)

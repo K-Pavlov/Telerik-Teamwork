@@ -3,17 +3,14 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
-    using Microsoft.Xna.Framework.Input;
+
+    using FyodorDostoevskyRPG.ButtonManagement;
 
     public class MainMenuScreen : BaseScreen
     {
         // Fields
         private Texture2D mainMenuBackground;
-
-        private Texture2D startButtonImage;        
-        private Vector2 startButtonPosition;
-        private Rectangle startButtonRect;
-        private Color startButtonColor;
+        private StartButton startBtn;
 
         // Methods
         public override void LoadContent(ContentManager content)
@@ -21,10 +18,8 @@
             base.LoadContent(content);
             this.mainMenuBackground = this.baseScreenContentManager.Load<Texture2D>("MainMenuImage");
 
-            this.startButtonImage = this.baseScreenContentManager.Load<Texture2D>("some-button");
-            this.startButtonPosition = new Vector2(150, 100);
-            this.startButtonRect = new Rectangle((int)this.startButtonPosition.X, (int)this.startButtonPosition.Y, this.startButtonImage.Width, this.startButtonImage.Height);
-            this.startButtonColor = new Color(255, 255, 255);
+            this.startBtn = new StartButton(new Vector2(150, 100));
+            this.startBtn.Click += strBtn_Click;
         }
 
         public override void UnloadContent()
@@ -34,26 +29,22 @@
 
         public override void Update(GameTime gameTime)
         {
-            if (this.startButtonRect.Intersects(InputManager.Instance.MouseRectanle))
-            {
-                startButtonColor = new Color(300, 0, 0);
-                if (InputManager.Instance.MouseLeftButtonPressed())
-                {
-                    {
-                        ScreenManager.Instance.LoadScreen(new MapOneScreen());
-                    }
-                }
-            }
-            else
-            {
-                startButtonColor = new Color(255, 255, 255); ;
-            }
+            this.startBtn.Update();
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(mainMenuBackground, new Vector2(0, 0), Color.White);
-            spriteBatch.Draw(startButtonImage, startButtonPosition, startButtonColor);
+            this.startBtn.Draw(spriteBatch);
+        }
+
+        // Event handler
+        void strBtn_Click(object sender, System.EventArgs e)
+        {
+            if (sender is StartButton)
+            {
+                ScreenManager.Instance.LoadScreen(new MapOneScreen());
+            }            
         }
     }
 }
