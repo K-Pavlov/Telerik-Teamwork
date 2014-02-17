@@ -3,6 +3,7 @@
     using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Audio;
 
     public abstract class Button
     {
@@ -10,45 +11,67 @@
         public event EventHandler Hover;
         public event EventHandler Click;
 
+        private SoundEffect mouseClickSound;
+
         // Constructor
-        protected Button(Texture2D image, Vector2 pos)
+        protected Button(Texture2D imageUp, Texture2D imageOver, Texture2D imageDown, Vector2 pos)
         {
-            this.BtnImage = image;
+            this.mouseClickSound = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/mouse-click"); 
+
+            this.BtnImageUp = imageUp;
+            this.BtnImageOver = imageOver;
+            this.BtnImageDown = imageDown;
+
             this.BtnPosition = pos;
-            this.BtnRectangle = new Rectangle((int)pos.X, (int)pos.Y, image.Width, image.Height);
-            this.BtnColor = Color.White;
+            this.BtnRectangle = new Rectangle((int)pos.X, (int)pos.Y, imageUp.Width, imageUp.Height);
         }
 
         // Properties
-        public Texture2D BtnImage { get; private set; }
+        public Texture2D BtnImageUp { get; private set; }
+        public Texture2D BtnImageOver { get; private set; }
+        public Texture2D BtnImageDown { get; private set; }
+
+
         public Vector2 BtnPosition { get; private set; }
         public Rectangle BtnRectangle { get; private set; }
-        public Color BtnColor { get; private set; }
+        public ButtonStatus ButtonState { get; private set; }
 
         // Methods
         public void Update()
         {
             if (this.BtnRectangle.Intersects(InputManager.Instance.MouseRectanle))
             {
-                this.BtnColor = Color.Red;
+                this.ButtonState = ButtonStatus.Over;
                 if (InputManager.Instance.MouseLeftButtonDown())
                 {
-                    this.BtnColor = Color.DarkRed;
+                    this.ButtonState = ButtonStatus.Down;
                 }
                 else if (InputManager.Instance.MouseLeftButtonPressedInverted() && this.Click != null)
                 {
+                    this.mouseClickSound.Play();
                     this.Click(this, new EventArgs());
                 }
             }
             else
             {
-                this.BtnColor = Color.White;
+                this.ButtonState = ButtonStatus.Up;
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.BtnImage, this.BtnRectangle, this.BtnColor);
+            switch (this.ButtonState)
+            {
+                case ButtonStatus.Up:
+                    spriteBatch.Draw(this.BtnImageUp, this.BtnRectangle, Color.White);
+                    break;
+                case ButtonStatus.Over:
+                    spriteBatch.Draw(this.BtnImageOver, this.BtnRectangle, Color.White);
+                    break;
+                case ButtonStatus.Down:
+                    spriteBatch.Draw(this.BtnImageDown, this.BtnRectangle, Color.White);
+                    break;
+            }
         }
 
         protected virtual void OnHover(EventArgs e)

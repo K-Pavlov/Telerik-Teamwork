@@ -9,10 +9,11 @@ namespace FyodorDostoevskyRPG
 
     public class FyodorsAdventure : Game
     {
+        // Fields
+        public static bool ShouldExit = false;
+
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-
-
         private Texture2D customCursor;
 
         public FyodorsAdventure()
@@ -67,6 +68,8 @@ namespace FyodorDostoevskyRPG
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            if (ShouldExit) this.Exit();
+
             base.Update(gameTime);
             InputManager.Instance.Update();
             ScreenManager.Instance.Update(gameTime);

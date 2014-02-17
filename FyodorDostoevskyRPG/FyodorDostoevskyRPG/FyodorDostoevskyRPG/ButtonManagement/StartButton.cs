@@ -3,11 +3,15 @@
     using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
+    using FyodorDostoevskyRPG.ScreenManagement;
 
-    class StartButton : Button
+    public class StartButton : Button
     {
+        // Constructor
         public StartButton(Vector2 pos)
-            : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("some-button"), pos)
+            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/startUP"),
+                   ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/startOVER"),
+                   ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/startDOWN"), pos)
         {
         }
     }
