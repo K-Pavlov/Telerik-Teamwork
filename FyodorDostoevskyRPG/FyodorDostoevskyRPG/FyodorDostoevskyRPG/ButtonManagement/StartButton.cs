@@ -5,7 +5,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using FyodorDostoevskyRPG.ScreenManagement;
 
-    public class StartButton : Button
+    public class StartButton : Button, IButton
     {
         // Constructor
         public StartButton(Vector2 pos)

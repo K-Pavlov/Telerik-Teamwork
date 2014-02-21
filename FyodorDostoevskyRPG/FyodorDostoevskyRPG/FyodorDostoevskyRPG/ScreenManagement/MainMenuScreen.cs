@@ -7,7 +7,7 @@
 
     using FyodorDostoevskyRPG.ButtonManagement;
 
-    public class MainMenuScreen : BaseScreen
+    public class MainMenuScreen : BaseScreen, IScreen
     {
         // Fields
         private Texture2D mainMenuBackground;
@@ -19,6 +19,7 @@
         public override void LoadContent(ContentManager content)
         {
             base.LoadContent(content);
+
             this.mainMenuBackground = this.baseScreenContentManager.Load<Texture2D>("MainMenuImage");
 
             this.startBtn = new StartButton(new Vector2(150, 100));
@@ -58,7 +59,7 @@
             }
             else if (sender is AboutButton)
             {
-                
+                ScreenManager.Instance.LoadScreen(new AboutScreen());
             }
             else if (sender is ExitButton)
             {

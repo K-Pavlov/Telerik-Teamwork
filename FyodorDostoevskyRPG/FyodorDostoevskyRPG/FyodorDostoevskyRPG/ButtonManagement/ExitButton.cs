@@ -5,7 +5,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using FyodorDostoevskyRPG.ScreenManagement;
 
-    class ExitButton : Button
+    class ExitButton : Button, IButton
     {
         // Constructor
         public ExitButton(Vector2 pos)

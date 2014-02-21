@@ -5,7 +5,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
 
-    public class TitleScreen : BaseScreen
+    public class TitleScreen : BaseScreen, IScreen
     {
         private KeyboardState currentKey, previousKey;
         private Texture2D logo;

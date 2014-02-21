@@ -4,7 +4,7 @@
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
 
-    public abstract class BaseScreen
+    public abstract class BaseScreen : IScreen
     {
         protected ContentManager baseScreenContentManager;
 

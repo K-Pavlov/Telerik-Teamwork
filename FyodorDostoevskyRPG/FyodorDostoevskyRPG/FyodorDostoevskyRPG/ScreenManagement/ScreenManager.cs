@@ -38,13 +38,18 @@
         public void LoadScreen(BaseScreen screen)
         {
             this.screenStack.Push(screen);
-            this.currentScreen.UnloadContent();
+            //this.currentScreen.UnloadContent();
             this.currentScreen = screen;
             this.currentScreen.LoadContent(this.screenManagerContent);
         }
 
-        public void UnloadScreen(BaseScreen screen)
+        public void UnloadScreen()
         {
+            if (this.screenStack.Count > 1)
+            {
+                this.screenStack.Pop();
+                this.currentScreen = this.screenStack.Peek();
+            }
         }
 
         public void LoadContent(ContentManager content)
