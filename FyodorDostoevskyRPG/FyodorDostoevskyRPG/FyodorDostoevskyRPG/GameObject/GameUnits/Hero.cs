@@ -3,18 +3,32 @@
     using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-
+    using FyodorDostoevskyRPG.GameObject.GameItems;
     using FyodorDostoevskyRPG.ScreenManagement;
 
     internal class Hero : Unit, IDrawObject
     {
         private const int turnRadius = 50;
+        private Weapon weapon1;
+        private Shield shield1;
         private float heroSpeed;
         private Vector2 target, direction;
         private Animation heroAnimation;
 
         public int DamageMax { get; set; }
 
+        public Weapon Weapon1
+        {
+            get { return this.weapon1; }
+            set { this.weapon1 = value; }
+        }
+
+        public Shield Shield1
+        {
+            get { return this.shield1; }
+            set { this.shield1 = value; }
+        }
+        
         public Hero(Vector2 position, string name, int health, int damageMin, int damageMax)
             : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("heroAnimation"), position, name, health, damageMin)
         {

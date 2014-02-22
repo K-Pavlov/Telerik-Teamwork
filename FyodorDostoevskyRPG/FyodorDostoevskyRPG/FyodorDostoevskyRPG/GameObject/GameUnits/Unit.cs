@@ -75,6 +75,11 @@
         {
         }
 
+        public void Die()
+        {
+            IsAlive = false;
+        }
+
         public void TakeDamage(int damage)
         {
             this.Health -= damage;

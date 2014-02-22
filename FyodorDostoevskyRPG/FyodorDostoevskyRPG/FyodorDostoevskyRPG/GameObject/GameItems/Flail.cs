@@ -4,8 +4,9 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
-    internal class Flail : Weapon, IDrawObject, ISpecial<int>
+    internal class Flail : Weapon, IDrawObject
     {
+        private static int SpecialChance { get; set; }
         Random random = new Random();
         public Flail(Vector2 position, int dmg, double crit)
             : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("flail"),
@@ -13,9 +14,18 @@
         {
         }
 
-        public int ActivateSpecial()
+        public override bool ActivateSpecial()
         {
-            return this.Damage + random.Next(1, 11);
+            SpecialChance = random.Next(1, 101);
+            if (SpecialChance <= 10)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override void DeactivateSpecial()
+        {
         }
     }
 }

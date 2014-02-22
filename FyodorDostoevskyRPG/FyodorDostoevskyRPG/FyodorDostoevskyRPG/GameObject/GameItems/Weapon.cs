@@ -46,5 +46,8 @@
                 this.crit = value;
             }
         }
+
+        public abstract bool ActivateSpecial();
+        public abstract void DeactivateSpecial();
     }
 }

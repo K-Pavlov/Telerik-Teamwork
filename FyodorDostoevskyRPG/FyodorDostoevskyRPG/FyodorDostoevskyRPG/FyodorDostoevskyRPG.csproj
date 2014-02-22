@@ -75,14 +75,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
+    <Compile Include="BattleLogic.cs" />
     <Compile Include="ButtonManagement\AboutButton.cs" />
     <Compile Include="ButtonManagement\Button.cs" />
     <Compile Include="ButtonManagement\ButtonStatus.cs" />
     <Compile Include="ButtonManagement\ExitButton.cs" />
     <Compile Include="ButtonManagement\IButton.cs" />
     <Compile Include="GameObject\GameItems\Chest.cs" />
+    <Compile Include="GameObject\GameItems\ChestState.cs" />
     <Compile Include="GameObject\GameItems\Flail.cs" />
-    <Compile Include="GameObject\GameItems\ISpecial.cs" />
     <Compile Include="GameObject\GameItems\Shield.cs" />
     <Compile Include="GameObject\GameUnits\Dragon.cs" />
     <Compile Include="GameObject\GameUnits\Golem.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="GameObject\GameUnits\Unit.cs" />
     <Compile Include="GameObject\IDrawObject.cs" />
     <Compile Include="GameObject\ObjectRPG.cs" />
+    <Compile Include="IBattle.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="GameObject\GameItems\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

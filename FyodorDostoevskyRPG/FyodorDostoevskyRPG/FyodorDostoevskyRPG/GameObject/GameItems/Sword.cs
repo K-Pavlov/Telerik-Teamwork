@@ -4,19 +4,32 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
-    internal class Sword : Weapon, IDrawObject, ISpecial<int>
+    internal class Sword : Weapon, IDrawObject
     {
+        private static int attackCount;
         Random random = new Random();
         public Sword(Vector2 position, int dmg, double crit)
             : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("sword"), 
             position, dmg, crit)
         {
+            attackCount = 1;
         }
 
-        public int ActivateSpecial()
+        public override bool ActivateSpecial()
         {
-            return this.Damage + random.Next(1, 11);
+            if (attackCount == 3)
+            {
+                this.Damage += this.Damage / 2;
+                attackCount = 1;
+                return true;
+            }
+            attackCount++;
+            return false;
         }
 
+        public override void DeactivateSpecial()
+        {
+            this.Damage -= this.Damage / 2;
+        }
     }
 }

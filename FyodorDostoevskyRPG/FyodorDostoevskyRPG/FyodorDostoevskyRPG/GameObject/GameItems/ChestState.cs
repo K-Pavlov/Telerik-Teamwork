@@ -1,7 +1,8 @@
 ﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
-    public interface ISpecial<T>
+    public enum ChestState
     {
-        T ActivateSpecial();
+        Closed,
+        Opened
     }
 }
