@@ -8,26 +8,16 @@
 
     public class Hero : Unit, IDrawObject
     {
+        // Fields
         private const int turnRadius = 50;
-        private Weapon weapon1;
-        private Shield shield1;
+        private Weapon weapon;
+        private Shield shield;
         private float heroSpeed;
         private Vector2 target, direction;
         private Animation heroAnimation;
         public int DamageMax { get; set; }
 
-        public Weapon Weapon1
-        {
-            get { return this.weapon1; }
-            set { this.weapon1 = value; }
-        }
-
-        public Shield Shield1
-        {
-            get { return this.shield1; }
-            set { this.shield1 = value; }
-        }
-        
+        // Constructor
         public Hero(Vector2 position, string name, int health, int damageMin, int damageMax)
             : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("heroAnimation"), position, name, health, damageMin)
         {
@@ -35,10 +25,28 @@
             this.heroAnimation = new Animation(position, new Vector2(5, 4));
             this.heroAnimation.Image = this.Image;
             this.heroSpeed = 1.4f;
-            this.Weapon1 = new Sword(Vector2.Zero, 5, 10);
-            this.Shield1 = new Shield(Vector2.Zero, 5);
+
+            this.MaxHealth = health;
+            this.Weapon = new Sword(Vector2.Zero, 5, 10);
+            this.Shield = new Shield(Vector2.Zero, 5);
         }
 
+        // Properties
+        public int MaxHealth { get; private set; }
+
+        public Weapon Weapon
+        {
+            get { return this.weapon; }
+            set { this.weapon = value; }
+        }
+
+        public Shield Shield
+        {
+            get { return this.shield; }
+            set { this.shield = value; }
+        }
+
+        // Methods
         public void HandleInput()
         {
             if (InputManager.Instance.MouseLeftButtonDown())
@@ -99,11 +107,11 @@
         {
             if (item is Weapon)
             {
-                this.Weapon1 = item as Weapon;
+                this.Weapon = item as Weapon;
             }
             else
             {
-                this.Shield1 = item as Shield;
+                this.Shield = item as Shield;
             }
         }
     }

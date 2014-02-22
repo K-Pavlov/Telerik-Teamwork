@@ -1,14 +1,11 @@
-﻿using FyodorDostoevskyRPG.GameObject.GameUnits;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-
-
-namespace FyodorDostoevskyRPG
+﻿namespace FyodorDostoevskyRPG
 {
+    using System;
+    using System.Threading;
+
+    using FyodorDostoevskyRPG.GameObject.GameUnits;
     using FyodorDostoevskyRPG.GameObject.GameItems;
+
     public static class BattleLogic
     {
         private static bool activated;
@@ -20,19 +17,19 @@ namespace FyodorDostoevskyRPG
         }
         public static void HeroAttack(Hero hero, Monster monster)
         {
-            activated = hero.Weapon1.ActivateSpecial();            
+            activated = hero.Weapon.ActivateSpecial();            
             monster.TakeDamage(
             randomGenerator.Next(
-                hero.Damage + hero.Weapon1.Damage, hero.DamageMax + hero.Weapon1.Damage + 1));
+                hero.Damage + hero.Weapon.Damage, hero.DamageMax + hero.Weapon.Damage + 1));
             if (activated)
             {
-                hero.Weapon1.DeactivateSpecial();
+                hero.Weapon.DeactivateSpecial();
             }
             if (monster.Health <= 0)
             {
                 monster.Die();
             }
-            if (!(activated && hero.Weapon1 is Flail))
+            if (!(activated && hero.Weapon is Flail))
             {
                 //Thread.Sleep(1000);
                 MonsterAttack(hero, monster);
@@ -41,11 +38,11 @@ namespace FyodorDostoevskyRPG
 
         private static void MonsterAttack(Hero hero, Monster monster)
         {
-            activated = hero.Shield1.ActivateSpecial();            
-            hero.TakeDamage(monster.Damage - (int)hero.Shield1.Defense);            
+            activated = hero.Shield.ActivateSpecial();            
+            hero.TakeDamage(monster.Damage - (int)hero.Shield.Defense);            
             if (activated)
             {
-                hero.Shield1.DeactivateSpecial();
+                hero.Shield.DeactivateSpecial();
             }
             if (hero.Health <= 0)
             {
