@@ -4,7 +4,7 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
-    internal class Sword : Weapon, IDrawObject
+    public class Sword : Weapon, IDrawObject
     {
         private static int attackCount;
         Random random = new Random();

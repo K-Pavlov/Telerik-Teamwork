@@ -4,7 +4,7 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
-    internal class Flail : Weapon, IDrawObject
+    public class Flail : Weapon, IDrawObject
     {
         private static int SpecialChance { get; set; }
         Random random = new Random();

@@ -4,7 +4,7 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
-    internal class Shield : Item, IDrawObject
+    public class Shield : Item, IDrawObject
     {
         protected double defense;
         private static Random random;

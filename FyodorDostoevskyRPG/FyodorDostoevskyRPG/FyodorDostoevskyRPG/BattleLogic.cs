@@ -18,7 +18,7 @@ namespace FyodorDostoevskyRPG
             randomGenerator = new Random();
             
         }
-        static void HeroAttack(Hero hero, Monster monster)
+        public static void HeroAttack(Hero hero, Monster monster)
         {
             activated = hero.Weapon1.ActivateSpecial();            
             monster.TakeDamage(
@@ -34,7 +34,7 @@ namespace FyodorDostoevskyRPG
             }
             if (!(activated && hero.Weapon1 is Flail))
             {
-                Thread.Sleep(3000);
+                //Thread.Sleep(1000);
                 MonsterAttack(hero, monster);
             }
         }
@@ -51,7 +51,7 @@ namespace FyodorDostoevskyRPG
             {
                 hero.Die();
             }
-            Thread.Sleep(3000);
+            //Thread.Sleep(1000);
         }
 
     }

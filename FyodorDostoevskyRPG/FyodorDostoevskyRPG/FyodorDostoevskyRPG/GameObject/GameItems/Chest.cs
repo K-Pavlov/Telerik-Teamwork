@@ -12,23 +12,26 @@
         public Chest(Vector2 position)
             :base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("ChestClosed"), position) 
         {
-            OpenedChest = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("PurpleOpen");
             ChestStatus = ChestState.Closed;
         }
 
         public Item RandomItem()
         {
             int whatToGet = random.Next(1, 4);
+            ChestStatus = ChestState.Opened;
             if (whatToGet == 1)
             {
+                OpenedChest = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("sword");
                 return new Sword(new Vector2(this.Position.X,this.Position.Y), 20, 40);
             }
             else if (whatToGet == 2)
             {
+                OpenedChest = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("flail");
                 return new Flail(new Vector2(this.Position.X, this.Position.Y), 25, 50);
             }
             else
             {
+                OpenedChest = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("shield");
                 return new Shield(new Vector2(this.Position.X, this.Position.Y), 10);
             }
         }

@@ -43,10 +43,10 @@
             }
             set
             {
-                if (value <= 1)
-                {
-                    throw new ArgumentNullException("Health value has be a positive integer number");
-                }
+                //if (value <= 1)
+                //{
+                //    throw new ArgumentNullException("Health value has be a positive integer number");
+                //}
                 this.health = value;
             }
         }

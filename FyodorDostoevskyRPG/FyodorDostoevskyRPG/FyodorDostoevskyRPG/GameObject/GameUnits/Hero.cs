@@ -6,7 +6,7 @@
     using FyodorDostoevskyRPG.GameObject.GameItems;
     using FyodorDostoevskyRPG.ScreenManagement;
 
-    internal class Hero : Unit, IDrawObject
+    public class Hero : Unit, IDrawObject
     {
         private const int turnRadius = 50;
         private Weapon weapon1;
@@ -14,7 +14,6 @@
         private float heroSpeed;
         private Vector2 target, direction;
         private Animation heroAnimation;
-
         public int DamageMax { get; set; }
 
         public Weapon Weapon1
@@ -36,6 +35,8 @@
             this.heroAnimation = new Animation(position, new Vector2(5, 4));
             this.heroAnimation.Image = this.Image;
             this.heroSpeed = 1.4f;
+            this.Weapon1 = new Sword(Vector2.Zero, 5, 10);
+            this.Shield1 = new Shield(Vector2.Zero, 5);
         }
 
         public void HandleInput()
@@ -92,6 +93,18 @@
         public override void Draw(SpriteBatch spriteBatch)
         {
             this.heroAnimation.Draw(spriteBatch);
+        }
+
+        public void UpdateItem(Item item)
+        {
+            if (item is Weapon)
+            {
+                this.Weapon1 = item as Weapon;
+            }
+            else
+            {
+                this.Shield1 = item as Shield;
+            }
         }
     }
 }

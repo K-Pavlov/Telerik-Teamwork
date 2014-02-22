@@ -2,7 +2,6 @@
 using FyodorDostoevskyRPG.GameObject.GameUnits;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
 namespace FyodorDostoevskyRPG.ScreenManagement
 {
     class BattleScreen : BaseScreen
@@ -13,24 +12,36 @@ namespace FyodorDostoevskyRPG.ScreenManagement
         private Vector2 heroPosition = new Vector2(50, 50);
         private Vector2 monsterPosition;
 
-        public BattleScreen(IDrawObject unit)
+        private Hero hero;
+        private Monster monster;
+
+        public BattleScreen(Hero hero, Monster monster)
         {
-            if (unit is Dragon)
+            if (monster is Dragon)
             {
                 monsterImage = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("bigHero");
             }
-            else if (unit is Golem)
+            else if (monster is Golem)
             {
                 monsterImage = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("bigMonster");
             }
-
+            this.monster = monster;
+            this.hero = hero;
             monsterPosition = new Vector2(750 - monsterImage.Width, 50);
         }
 
 
         public override void Update(GameTime gameTime)
         {
-
+            BattleLogic.HeroAttack(hero, monster);
+            if (!monster.IsAlive)
+            {
+                ScreenManager.Instance.UnloadScreen();
+            }
+            else if (!hero.IsAlive)
+            {
+                FyodorsAdventure.ShouldExit = true;
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

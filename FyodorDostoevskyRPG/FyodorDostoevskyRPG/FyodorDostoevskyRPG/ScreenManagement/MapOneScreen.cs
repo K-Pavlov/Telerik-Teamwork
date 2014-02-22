@@ -1,7 +1,7 @@
 ﻿namespace FyodorDostoevskyRPG.ScreenManagement
 {
     using System;
-
+    using System.Collections.Generic;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
@@ -15,8 +15,8 @@
         // Fields
         private Texture2D mapTexture;
         private Hero braveHero;
-        private Monster[] monstersOnThisMap;
-
+        private List<Monster> monstersOnThisMap;
+        private Chest chest;
 
         // Methods
         public override void LoadContent(ContentManager content)
@@ -24,9 +24,9 @@
             base.LoadContent(content);
 
             this.mapTexture = this.baseScreenContentManager.Load<Texture2D>("map-one");
-            this.braveHero = new Hero(new Vector2(10, 310), "DragonSlayer", 500, 10, 14);
+            this.braveHero = new Hero(new Vector2(10, 310), "DragonSlayer", 100, 10, 14);
 
-            this.monstersOnThisMap = new Monster[12]
+            this.monstersOnThisMap = new List<Monster>()
             {
                 new Dragon("Pesho", 100, 10, new Vector2(300, 250), true),
                 new Dragon("Gosho", 100, 10, new Vector2(210, 500), true),
@@ -40,7 +40,8 @@
                 new Golem("Tisho", 100, 10, new Vector2(350, 90), true),
                 new Dragon("Zoro", 100, 10, new Vector2(700, 140), true),
                 new Dragon("Batman", 100, 10, new Vector2(150, 1), true)
-            };            
+            };
+            this.chest = new Chest(new Vector2(200,200));
         }
 
         public override void UnloadContent()
@@ -62,7 +63,18 @@
                 if ((braveHero.Position.X > monster.Position.X - 20 && braveHero.Position.X < monster.Position.X + monster.Image.Width) &&
                    (braveHero.Position.Y > monster.Position.Y && braveHero.Position.Y < monster.Position.Y + monster.Image.Height))
                 {
-                    ScreenManager.Instance.LoadScreen(new BattleScreen(monster));
+                    this.monstersOnThisMap.Remove(monster);
+                    ScreenManager.Instance.LoadScreen(new BattleScreen(braveHero,monster));
+                    break;
+                }
+            }
+
+            if ((braveHero.Position.X > chest.Position.X - 20 && braveHero.Position.X < chest.Position.X + chest.Image.Width) &&
+                   (braveHero.Position.Y > chest.Position.Y && braveHero.Position.Y < chest.Position.Y + chest.Image.Height))
+            {
+                if (chest.ChestStatus == ChestState.Closed)
+                {
+                    this.braveHero.UpdateItem(chest.RandomItem());
                 }
             }
 
@@ -78,6 +90,7 @@
             {
                 dragon.Draw(spriteBatch);
             }
+            this.chest.Draw(spriteBatch);
             this.braveHero.Draw(spriteBatch);
         }
     }
