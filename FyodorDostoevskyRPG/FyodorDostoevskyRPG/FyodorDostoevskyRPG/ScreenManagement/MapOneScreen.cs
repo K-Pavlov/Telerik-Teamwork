@@ -26,13 +26,21 @@
             this.mapTexture = this.baseScreenContentManager.Load<Texture2D>("map-one");
             this.braveHero = new Hero(new Vector2(10, 310), "DragonSlayer", 500, 10, 14);
 
-            this.monstersOnThisMap = new Monster[5]
+            this.monstersOnThisMap = new Monster[12]
             {
-                new Dragon("Pesho", 100, 10, new Vector2(340, 200), true),
-                new Golem("Gosho", 100, 10, new Vector2(200, 400), true),
-                new Dragon("Tosho", 100, 10, new Vector2(600, 200), true),
-                new Golem("Mosho", 100, 10, new Vector2(550, 500), true),
-                new Dragon("Shosho", 100, 10, new Vector2(400, 350), true) };            
+                new Dragon("Pesho", 100, 10, new Vector2(300, 250), true),
+                new Dragon("Gosho", 100, 10, new Vector2(210, 500), true),
+                new Golem("Gosho", 100, 10, new Vector2(130, 480), true),
+                new Dragon("Tosho", 100, 10, new Vector2(700, 240), true),
+                new Golem("Tosho", 100, 10, new Vector2(670, 380), true),
+                new Golem("Mosho", 100, 10, new Vector2(660, 490), true),
+                new Golem("Shosho", 100, 10, new Vector2(400, 310), true), 
+                new Dragon("Doncho", 100, 10, new Vector2(330, 400), true),
+                new Golem("Misho", 100, 10, new Vector2(280, 100), true),
+                new Golem("Tisho", 100, 10, new Vector2(350, 90), true),
+                new Dragon("Zoro", 100, 10, new Vector2(700, 140), true),
+                new Dragon("Batman", 100, 10, new Vector2(150, 1), true)
+            };            
         }
 
         public override void UnloadContent()
