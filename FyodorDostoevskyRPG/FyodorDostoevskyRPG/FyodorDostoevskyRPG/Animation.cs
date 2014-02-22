@@ -11,6 +11,7 @@
         private Vector2 amountOfFrames;
         private Texture2D image;
         private Rectangle currentSprite;
+        private Vector2 position;
 
         public Texture2D Image
         {
@@ -20,7 +21,41 @@
             }
         }
 
-        public Vector2 Position { get; set; }
+        public Vector2 Position
+        {
+            get
+            {
+                return this.position;
+            }
+            set
+            {
+                if (value.X <= -10)
+                {
+                    this.position.X = 3;
+                    this.position.Y = value.Y;
+                }
+                else if (value.X >= 760)
+                {
+                    this.position.X = 750;
+                    this.position.Y = value.Y;
+                }
+                else if (value.Y <= -10)
+                {
+                    this.position.X = value.X;
+                    this.position.Y = 3;
+                }
+                else if (value.Y >= 540)
+                {
+                    this.position.X = value.X;
+                    this.position.Y = 530;
+                }
+                else
+                {
+                    this.position = value;
+                }
+
+            }
+        }
 
         public int SpriteRow { get; set; }
 

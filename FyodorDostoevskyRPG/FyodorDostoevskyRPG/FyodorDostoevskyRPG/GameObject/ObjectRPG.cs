@@ -23,11 +23,6 @@
             }
             protected set
             {
-                if ((value.X < 0) || (value.X > 800) || (value.Y < 0) || (value.Y > 600))
-                {
-                    throw new ArgumentOutOfRangeException("Coordinates out of screen! (800x600)");
-                }
-
                 this.position = value;
             }
         }
