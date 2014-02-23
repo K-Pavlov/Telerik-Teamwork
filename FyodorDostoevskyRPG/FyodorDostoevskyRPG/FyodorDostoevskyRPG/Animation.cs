@@ -5,6 +5,7 @@
 
     internal class Animation
     {
+        static int frameCounter = 0;
         private int frameCount;
         private int switchFrame;
         private int spriteCol;
@@ -33,21 +34,25 @@
                 {
                     this.position.X = 3;
                     this.position.Y = value.Y;
+                    Sounds.boundaryBounceSound.Play();
                 }
                 else if (value.X >= 760)
                 {
                     this.position.X = 750;
                     this.position.Y = value.Y;
+                    Sounds.boundaryBounceSound.Play();
                 }
                 else if (value.Y <= -10)
                 {
                     this.position.X = value.X;
                     this.position.Y = 3;
+                    Sounds.boundaryBounceSound.Play();
                 }
                 else if (value.Y >= 540)
                 {
                     this.position.X = value.X;
                     this.position.Y = 530;
+                    Sounds.boundaryBounceSound.Play();
                 }
                 else
                 {
@@ -97,6 +102,13 @@
             }
             if (this.frameCount >= this.switchFrame)
             {
+                frameCounter++;
+                if (frameCounter == 4)
+                {
+                    Sounds.step.Play();
+                    frameCounter = 0;
+                }
+
                 this.frameCount = 0;
                 this.spriteCol += this.FrameWidth;
 

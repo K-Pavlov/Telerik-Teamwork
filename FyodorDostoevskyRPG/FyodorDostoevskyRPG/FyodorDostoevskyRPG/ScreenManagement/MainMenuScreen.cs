@@ -56,6 +56,8 @@
             if (sender is StartButton)
             {
                 ScreenManager.Instance.LoadScreen(new MapOneScreen());
+                Sounds.StopMainMusic();
+                Sounds.StartMapMusic();
             }
             else if (sender is AboutButton)
             {
@@ -63,6 +65,8 @@
             }
             else if (sender is ExitButton)
             {
+                Sounds.StartExitMusic();
+                System.Threading.Thread.Sleep(6500);
                 FyodorsAdventure.ShouldExit = true;
             }
         }

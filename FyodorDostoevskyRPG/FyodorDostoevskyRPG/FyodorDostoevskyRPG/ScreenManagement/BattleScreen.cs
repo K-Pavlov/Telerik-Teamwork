@@ -27,7 +27,6 @@
         {
             this.monster = monster;
             this.hero = hero;
-
             this.monsterStartHealt = monster.Health;
             this.heroStartHealth = hero.Health;
         }

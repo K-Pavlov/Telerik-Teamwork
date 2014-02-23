@@ -72,6 +72,8 @@
                    (braveHero.Position.Y > monster.Position.Y && braveHero.Position.Y < monster.Position.Y + monster.Image.Height))
                 {
                     this.monstersOnThisMap.Remove(monster);
+                    Sounds.StopMapMusic();
+                    Sounds.StartBattleMusic();
                     ScreenManager.Instance.LoadScreen(new BattleScreen(braveHero,monster));
                     break;
                 }

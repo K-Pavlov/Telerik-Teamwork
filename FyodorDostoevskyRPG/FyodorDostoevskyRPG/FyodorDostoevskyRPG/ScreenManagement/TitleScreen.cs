@@ -13,6 +13,7 @@
 
         public override void LoadContent(ContentManager content)
         {
+            Sounds.StartMainMusic();
             base.LoadContent(content);
             this.logo = this.baseScreenContentManager.Load<Texture2D>("TitleImage");
         }

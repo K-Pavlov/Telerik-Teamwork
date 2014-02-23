@@ -27,6 +27,8 @@
             if (monster.Health <= 0)
             {
                 monster.Die();
+                Sounds.StopBattleMusic();
+                Sounds.StartMapMusic();
             }
             if (!(activated && hero.Weapon is Flail))
             {
@@ -45,6 +47,8 @@
             if (hero.Health <= 0)
             {
                 hero.Die();
+                Sounds.StopBattleMusic();
+                Sounds.StartMapMusic();
             }
         }
     }

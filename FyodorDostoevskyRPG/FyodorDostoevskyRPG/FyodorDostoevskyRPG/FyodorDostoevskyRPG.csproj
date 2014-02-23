@@ -107,6 +107,7 @@
     <Compile Include="ScreenManagement\ScreenManager.cs" />
     <Compile Include="ScreenManagement\TitleScreen.cs" />
     <Compile Include="ButtonManagement\StartButton.cs" />
+    <Compile Include="Sounds.cs" />
     <Compile Include="StartGame.cs" />
     <Compile Include="FyodorsAdventure.cs" />
     <Compile Include="GameObject\GameItems\Sword.cs" />
