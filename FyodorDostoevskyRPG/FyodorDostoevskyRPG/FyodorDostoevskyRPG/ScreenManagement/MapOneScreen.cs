@@ -79,6 +79,12 @@
                 }
             }
 
+            if ((braveHero.Position.X > 530 && braveHero.Position.X < 565) &&
+             (braveHero.Position.Y > 86 && braveHero.Position.Y < 125))
+            {
+                this.braveHero.Heal();
+            }
+
             foreach(var chest in chests)
             {
                 if ((braveHero.Position.X > chest.Position.X - 20 && braveHero.Position.X < chest.Position.X + chest.Image.Width) &&

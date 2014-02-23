@@ -15,6 +15,8 @@
         private float heroSpeed;
         private Vector2 target, direction;
         private Animation heroAnimation;
+        private DateTime lastHealed;
+
         public int DamageMax { get; set; }
 
         // Constructor
@@ -29,6 +31,7 @@
             this.MaxHealth = health;
             this.Weapon = new Sword(Vector2.Zero, 5, 10);
             this.Shield = new Shield(Vector2.Zero, 5);
+            this.lastHealed = DateTime.Now;
         }
 
         // Properties
@@ -112,6 +115,15 @@
             else
             {
                 this.Shield = item as Shield;
+            }
+        }
+
+        public void Heal()
+        {
+            if ((DateTime.Now).CompareTo(lastHealed.AddSeconds(20)) > 0 && (this.Health + 10 < this.MaxHealth))
+            {
+                this.Health += 10;
+                lastHealed = DateTime.Now;
             }
         }
     }
