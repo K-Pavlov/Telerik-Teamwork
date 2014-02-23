@@ -1,7 +1,6 @@
 ﻿namespace FyodorDostoevskyRPG
 {
     using System;
-    using System.Threading;
 
     using FyodorDostoevskyRPG.GameObject.GameUnits;
     using FyodorDostoevskyRPG.GameObject.GameItems;
@@ -31,7 +30,6 @@
             }
             if (!(activated && hero.Weapon is Flail))
             {
-                //Thread.Sleep(1000);
                 MonsterAttack(hero, monster);
             }
         }
@@ -48,8 +46,6 @@
             {
                 hero.Die();
             }
-            //Thread.Sleep(1000);
         }
-
     }
 }

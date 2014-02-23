@@ -16,7 +16,7 @@
         private Texture2D mapTexture;
         private Hero braveHero;
         private List<Monster> monstersOnThisMap;
-        private Chest chest;
+        private List<Chest> chests;
 
         // Methods
         public override void LoadContent(ContentManager content)
@@ -41,7 +41,15 @@
                 new Dragon("Zoro", 100, 10, new Vector2(700, 140), true),
                 new Dragon("Batman", 100, 10, new Vector2(150, 1), true)
             };
-            this.chest = new Chest(new Vector2(200,200));
+
+            this.chests = new List<Chest>
+            {
+                new Chest(new Vector2(8,9)),
+                new Chest(new Vector2(160,550)),
+                new Chest(new Vector2(310,325)),
+                new Chest(new Vector2(270,25)),
+                new Chest(new Vector2(750,533))
+            };
         }
 
         public override void UnloadContent()
@@ -69,15 +77,17 @@
                 }
             }
 
-            if ((braveHero.Position.X > chest.Position.X - 20 && braveHero.Position.X < chest.Position.X + chest.Image.Width) &&
-                   (braveHero.Position.Y > chest.Position.Y && braveHero.Position.Y < chest.Position.Y + chest.Image.Height))
+            foreach(var chest in chests)
             {
-                if (chest.ChestStatus == ChestState.Closed)
+                if ((braveHero.Position.X > chest.Position.X - 20 && braveHero.Position.X < chest.Position.X + chest.Image.Width) &&
+                    (braveHero.Position.Y > chest.Position.Y && braveHero.Position.Y < chest.Position.Y + chest.Image.Height))
                 {
-                    this.braveHero.UpdateItem(chest.RandomItem());
+                    if (chest.ChestStatus == ChestState.Closed)
+                    {
+                        this.braveHero.UpdateItem(chest.RandomItem());
+                    }
                 }
             }
-
             this.braveHero.Update(gameTime);
 
         }
@@ -90,7 +100,12 @@
             {
                 dragon.Draw(spriteBatch);
             }
-            this.chest.Draw(spriteBatch);
+
+            foreach (var chest in chests)
+            {
+                chest.Draw(spriteBatch);
+            }
+            
             this.braveHero.Draw(spriteBatch);
         }
     }
