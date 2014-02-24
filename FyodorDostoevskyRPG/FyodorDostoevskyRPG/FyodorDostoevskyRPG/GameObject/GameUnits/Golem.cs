@@ -8,9 +8,10 @@
 
     internal class Golem : Monster, IDrawObject
     {
-        public Golem(string name, int health, int damage, Vector2 position, bool ranged)
+        private static Random random = new Random();
+        public Golem(string name, Vector2 position, bool ranged)
             : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("stoneGolem"), 
-            position, name, health, damage, ranged)
+            position, name, random.Next(30, 50), 10, ranged)
         {
         }
     }

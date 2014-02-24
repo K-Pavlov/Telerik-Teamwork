@@ -30,6 +30,7 @@
                 Sounds.StopBattleMusic();
                 Sounds.StartMapMusic();
             }
+            BlessingOfTheBattle(hero);
             if (!(activated && hero.Weapon is Flail))
             {
                 MonsterAttack(hero, monster);
@@ -49,6 +50,30 @@
                 hero.Die();
                 Sounds.StopBattleMusic();
                 Sounds.StartMapMusic();
+            }
+            BlessingOfTheBattle(monster);
+        }
+
+        private static void BlessingOfTheBattle(Unit unit)
+        {
+            if (randomGenerator.Next(1, 101) < 10 && unit.Health < unit.FullHeath)
+            {
+                if (unit is Hero)
+                {
+                    if (unit.Health + 8 >= unit.FullHeath)
+                    {
+                        unit.Health = unit.FullHeath;
+                        return;
+                    }
+                    unit.Health += 4;
+                    return;
+                }
+                if (unit.Health + 5 >= unit.FullHeath)
+                {
+                    unit.Health = unit.FullHeath;
+                    return;
+                }
+                unit.Health += 5;
             }
         }
     }

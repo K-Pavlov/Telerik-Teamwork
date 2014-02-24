@@ -8,9 +8,10 @@
 
     internal class Dragon : Monster, IDrawObject
     {
-        public Dragon(string name, int health, int damage, Vector2 position, bool ranged)
+        private static Random random = new Random();
+        public Dragon(string name, Vector2 position, bool ranged)
             : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("dragonImage"), 
-            position, name, health, damage, ranged)
+            position, name, random.Next(70,80), 6, ranged)
         {
         }
     }

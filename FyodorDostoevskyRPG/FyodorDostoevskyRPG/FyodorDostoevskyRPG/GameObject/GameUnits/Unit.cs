@@ -9,6 +9,7 @@
         private string name;
         private int health;
         private int damage;
+        private int fullHealth;
 
         public virtual Rectangle Rectangle
         {
@@ -25,6 +26,7 @@
             this.Health = health;
             this.Damage = damage;
             this.IsAlive = true;
+            this.FullHeath = health;
         }
 
         public string Name
@@ -51,11 +53,19 @@
             }
             set
             {
-                //if (value <= 1)
-                //{
-                //    throw new ArgumentNullException("Health value has be a positive integer number");
-                //}
                 this.health = value;
+            }
+        }
+
+        public int FullHeath
+        {
+            get
+            {
+                return this.fullHealth;
+            }
+            private set 
+            {
+                this.fullHealth = value; 
             }
         }
 

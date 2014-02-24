@@ -16,7 +16,7 @@
         private Vector2 target, direction;
         private Animation heroAnimation;
         private DateTime lastHealed;
-
+        private static Random random;
         public int DamageMax { get; set; }
 
         // Constructor
@@ -29,9 +29,10 @@
             this.heroSpeed = 1.4f;
 
             this.MaxHealth = health;
-            this.Weapon = new Sword(Vector2.Zero, 5, 10);
-            this.Shield = new Shield(Vector2.Zero, 5);
+            this.Weapon = new Sword(Vector2.Zero, 1, 2);
+            this.Shield = new Shield(Vector2.Zero, 1 );
             this.lastHealed = DateTime.Now;
+            random = new Random();
         }
 
         // Properties

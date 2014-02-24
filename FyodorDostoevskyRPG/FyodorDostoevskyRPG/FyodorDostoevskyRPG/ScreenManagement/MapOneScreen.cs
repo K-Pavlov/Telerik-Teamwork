@@ -25,22 +25,22 @@
             base.LoadContent(content);
 
             this.mapTexture = this.baseScreenContentManager.Load<Texture2D>("map-one");
-            this.braveHero = new Hero(new Vector2(10, 310), "DragonSlayer", 100, 10, 14);
+            this.braveHero = new Hero(new Vector2(10, 310), "DragonSlayer", 100, 5, 8);
 
             this.monstersOnThisMap = new List<Monster>()
             {
-                new Dragon("Pesho", 100, 10, new Vector2(300, 250), true),
-                new Dragon("Gosho", 100, 10, new Vector2(210, 500), true),
-                new Golem("Gosho", 100, 10, new Vector2(130, 480), true),
-                new Dragon("Tosho", 100, 10, new Vector2(700, 240), true),
-                new Golem("Tosho", 100, 10, new Vector2(670, 380), true),
-                new Golem("Mosho", 100, 10, new Vector2(660, 490), true),
-                new Golem("Shosho", 100, 10, new Vector2(400, 310), true), 
-                new Dragon("Doncho", 100, 10, new Vector2(330, 400), true),
-                new Golem("Misho", 100, 10, new Vector2(280, 100), true),
-                new Golem("Tisho", 100, 10, new Vector2(350, 90), true),
-                new Dragon("Zoro", 100, 10, new Vector2(700, 140), true),
-                new Dragon("Batman", 100, 10, new Vector2(150, 1), true)
+                new Dragon("Pesho", new Vector2(300, 250), true),
+                new Dragon("Gosho", new Vector2(210, 500), true),
+                new Golem("Gosho", new Vector2(130, 480), true),
+                new Dragon("Tosho", new Vector2(700, 240), true),
+                new Golem("Tosho", new Vector2(670, 380), true),
+                new Golem("Mosho", new Vector2(660, 490), true),
+                new Golem("Shosho", new Vector2(400, 310), true), 
+                new Dragon("Doncho", new Vector2(330, 400), true),
+                new Golem("Misho", new Vector2(280, 100), true),
+                new Golem("Tisho", new Vector2(350, 90), true),
+                new Dragon("Zoro", new Vector2(700, 140), true),
+                new Dragon("Batman", new Vector2(150, 1), true)
             };
 
             this.chests = new List<Chest>

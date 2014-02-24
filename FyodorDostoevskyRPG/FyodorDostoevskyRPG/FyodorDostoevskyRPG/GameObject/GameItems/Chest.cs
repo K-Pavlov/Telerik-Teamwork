@@ -6,7 +6,7 @@
 
     internal class Chest : Item
     {
-        Random random = new Random();
+        private static Random random;
         private Texture2D OpenedChest { get; set; }
         public ChestState ChestStatus { get; set; }
 
@@ -21,26 +21,27 @@
             :base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("ChestClosed"), position) 
         {
             ChestStatus = ChestState.Closed;
+            random = new Random();
         }
 
         public Item RandomItem()
         {
-            int whatToGet = random.Next(1, 4);
+            int whatToGet = random.Next(1, 10);
             ChestStatus = ChestState.Opened;
-            if (whatToGet == 1)
+            if (whatToGet >= 1 && whatToGet <= 3)
             {
                 OpenedChest = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("sword");
-                return new Sword(new Vector2(this.Position.X,this.Position.Y), 20, 40);
+                return new Sword(new Vector2(this.Position.X,this.Position.Y), 3, 4);
             }
-            else if (whatToGet == 2)
+             else if (whatToGet >= 4 && whatToGet <= 6)
             {
                 OpenedChest = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("flail");
-                return new Flail(new Vector2(this.Position.X, this.Position.Y), 25, 50);
+                return new Flail(new Vector2(this.Position.X, this.Position.Y), 4, 5);
             }
             else
             {
                 OpenedChest = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("shield");
-                return new Shield(new Vector2(this.Position.X, this.Position.Y), 10);
+                return new Shield(new Vector2(this.Position.X, this.Position.Y), 2);
             }
         }
 
