@@ -9,7 +9,7 @@
     public class Hero : Unit, IDrawObject
     {
         // Fields
-        private const int turnRadius = 50;
+        private const int TurnRadius = 50;
         private Weapon weapon;
         private Shield shield;
         private float heroSpeed;
@@ -49,6 +49,14 @@
             set { this.shield = value; }
         }
 
+        public override Rectangle Rectangle
+        {
+            get
+            {
+                return new Rectangle((int)this.Position.X, (int)this.Position.Y, 64, 64);
+            }
+        }
+
         // Methods
         public void HandleInput()
         {
@@ -60,14 +68,14 @@
                 this.direction.Normalize();
 
                 if (this.heroAnimation.Position.Y < this.target.Y &&
-                    Math.Abs(this.heroAnimation.Position.X - this.target.X) < Hero.turnRadius)
+                    Math.Abs(this.heroAnimation.Position.X - this.target.X) < Hero.TurnRadius)
                 {
                     this.heroAnimation.SpriteRow = 0;
                 }
                 else
                 {
                     if (this.heroAnimation.Position.Y > this.target.Y &&
-                    Math.Abs(this.heroAnimation.Position.X - this.target.X) < Hero.turnRadius)
+                    Math.Abs(this.heroAnimation.Position.X - this.target.X) < Hero.TurnRadius)
                     {
                         this.heroAnimation.SpriteRow = 1;
                     }
@@ -120,10 +128,15 @@
 
         public void Heal()
         {
-            if ((DateTime.Now).CompareTo(lastHealed.AddSeconds(20)) > 0 && (this.Health + 10 < this.MaxHealth))
+            if ((DateTime.Now).CompareTo(lastHealed.AddSeconds(1)) > 0 && (this.Health < this.MaxHealth))
             {
                 this.Health += 10;
                 lastHealed = DateTime.Now;
+
+                if (this.Health > this.MaxHealth)
+                {
+                    this.Health = this.MaxHealth;
+                }
             }
         }
     }

@@ -9,6 +9,14 @@
         Random random = new Random();
         private Texture2D OpenedChest { get; set; }
         public ChestState ChestStatus { get; set; }
+
+        public Rectangle Rectangle
+        {
+            get
+            {
+                return new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Image.Width, this.Image.Height);
+            }
+        }
         public Chest(Vector2 position)
             :base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("ChestClosed"), position) 
         {

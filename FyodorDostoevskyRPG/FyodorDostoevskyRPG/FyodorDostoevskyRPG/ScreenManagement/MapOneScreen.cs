@@ -17,6 +17,7 @@
         private Hero braveHero;
         private List<Monster> monstersOnThisMap;
         private List<Chest> chests;
+        private Rectangle fireRect;
 
         // Methods
         public override void LoadContent(ContentManager content)
@@ -50,6 +51,8 @@
                 new Chest(new Vector2(270,25)),
                 new Chest(new Vector2(750,533))
             };
+
+            this.fireRect = new Rectangle(500, 60, 100, 100);
         }
 
         public override void UnloadContent()
@@ -68,8 +71,7 @@
 
             foreach (var monster in monstersOnThisMap)
             {
-                if ((braveHero.Position.X > monster.Position.X - 20 && braveHero.Position.X < monster.Position.X + monster.Image.Width) &&
-                   (braveHero.Position.Y > monster.Position.Y && braveHero.Position.Y < monster.Position.Y + monster.Image.Height))
+                if (braveHero.Rectangle.Intersects(monster.Rectangle))
                 {
                     this.monstersOnThisMap.Remove(monster);
                     Sounds.StopMapMusic();
@@ -79,16 +81,15 @@
                 }
             }
 
-            if ((braveHero.Position.X > 530 && braveHero.Position.X < 565) &&
-             (braveHero.Position.Y > 86 && braveHero.Position.Y < 125))
+            if (braveHero.Rectangle.Intersects(fireRect))
+                //((braveHero.Position.X > 530 && braveHero.Position.X < 565) && (braveHero.Position.Y > 86 && braveHero.Position.Y < 125))
             {
                 this.braveHero.Heal();
             }
 
             foreach(var chest in chests)
             {
-                if ((braveHero.Position.X > chest.Position.X - 20 && braveHero.Position.X < chest.Position.X + chest.Image.Width) &&
-                    (braveHero.Position.Y > chest.Position.Y && braveHero.Position.Y < chest.Position.Y + chest.Image.Height))
+                if (braveHero.Rectangle.Intersects(chest.Rectangle))
                 {
                     if (chest.ChestStatus == ChestState.Closed)
                     {

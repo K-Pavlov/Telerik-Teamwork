@@ -10,6 +10,14 @@
         private int health;
         private int damage;
 
+        public virtual Rectangle Rectangle
+        {
+            get
+            {
+                return new Rectangle((int)this.Position.X, (int)this.Position.Y,this.Image.Width,this.Image.Height);                
+            }
+        }
+
         protected Unit(Texture2D image, Vector2 position, string name, int health, int damage)
             :base(image, position)
         {
