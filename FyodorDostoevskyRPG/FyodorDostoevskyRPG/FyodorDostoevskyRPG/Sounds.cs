@@ -10,6 +10,7 @@
         public static int resumeTime = 0;
         public static SoundEffect boundaryBounceSound = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/bounce");
         public static SoundEffect step = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/step");
+        public static SoundEffect heal = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/drinking_potion");
         public static Song mainSong = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/MAINMENU");
         public static Song exitSong = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/exitSong");
         public static Song mapScreen = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/mapScreen");

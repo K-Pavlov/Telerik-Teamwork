@@ -133,6 +133,7 @@
             {
                 this.Health += 10;
                 lastHealed = DateTime.Now;
+                Sounds.heal.Play();
 
                 if (this.Health > this.MaxHealth)
                 {
