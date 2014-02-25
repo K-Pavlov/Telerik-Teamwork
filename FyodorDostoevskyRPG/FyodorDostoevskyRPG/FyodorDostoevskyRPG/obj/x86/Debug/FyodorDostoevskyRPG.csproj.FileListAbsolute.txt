@@ -46,3 +46,5 @@ C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDo
 C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.exe
 C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\obj\x86\Debug\FyodorDostoevskyRPG.pdb
+C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\Sounds\WinBattle.xnb
+C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\Sounds\WinBattle.wma

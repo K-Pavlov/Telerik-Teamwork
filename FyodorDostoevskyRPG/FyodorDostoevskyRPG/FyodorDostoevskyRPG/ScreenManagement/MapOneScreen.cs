@@ -72,6 +72,7 @@
 
             if (this.monstersOnThisMap.Count == 0)
             {
+                Sounds.PlayWinCampaign();
                 ScreenManager.Instance.LoadScreen(new GameWinScreen());
             }
 

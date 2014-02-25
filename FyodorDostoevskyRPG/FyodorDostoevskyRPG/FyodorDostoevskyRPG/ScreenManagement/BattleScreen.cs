@@ -74,6 +74,7 @@
             }
             else if (!hero.IsAlive)
             {
+                Sounds.PlayLostCampaign();
                 ScreenManager.Instance.LoadScreen(new GameOverScreen());
             }
 

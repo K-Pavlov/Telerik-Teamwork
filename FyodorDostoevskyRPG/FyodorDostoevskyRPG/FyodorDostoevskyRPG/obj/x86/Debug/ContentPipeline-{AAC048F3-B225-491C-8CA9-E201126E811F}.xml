@@ -339,6 +339,16 @@
       <Extra>C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\Sounds\LoseCombat.wma</Extra>
       <Time>2014-02-25T14:27:04.0759964+02:00</Time>
     </Item>
+    <Item>
+      <Source>Sounds\WinBattle.mp3</Source>
+      <Name>Sounds\WinBattle</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\Sounds\WinBattle.xnb</Output>
+      <Extra>C:\Users\Lyubomir\Documents\GitHub\Telerik-Teamwork\FyodorDostoevskyRPG\FyodorDostoevskyRPG\FyodorDostoevskyRPG\bin\x86\Debug\Content\Sounds\WinBattle.wma</Extra>
+      <Time>1999-03-27T23:58:50+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{AAC048F3-B225-491C-8CA9-E201126E811F}</ContentProjectGUID>

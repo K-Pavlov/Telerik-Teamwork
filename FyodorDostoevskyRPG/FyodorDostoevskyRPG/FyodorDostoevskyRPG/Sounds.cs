@@ -22,6 +22,7 @@
         public static Song mapScreen = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/mapScreen");
         public static Song combatMusic = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/combat");
         public static Song loseCombat = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/LoseCombat");
+        public static Song winCombat = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/WinBattle");
 
         /////////////////////////////////////////////////////////
         public static void StartMainMusic()
@@ -64,7 +65,10 @@
         public static void PlayLostCampaign()
         {
             MediaPlayer.Play(Sounds.loseCombat);
-            System.Threading.Thread.Sleep(6500);
+        }
+        public static void PlayWinCampaign()
+        {
+            MediaPlayer.Play(Sounds.winCombat);
         }
         /////////////////////////////////////////////////////////
         public static void PlayHeal()

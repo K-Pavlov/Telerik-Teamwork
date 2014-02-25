@@ -40,3 +40,5 @@ Content\Sounds\mapScreen.xnb
 Content\Sounds\mapScreen.wma
 Content\Sounds\LoseCombat.xnb
 Content\Sounds\LoseCombat.wma
+Content\Sounds\WinBattle.xnb
+Content\Sounds\WinBattle.wma
