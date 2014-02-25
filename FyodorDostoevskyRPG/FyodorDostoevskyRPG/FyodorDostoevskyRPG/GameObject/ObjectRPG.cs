@@ -15,6 +15,9 @@
             this.Position = position;
         }
 
+        /// <summary>
+        /// Gets the position of the object
+        /// </summary>
         public Vector2 Position
         {
             get
@@ -27,8 +30,14 @@
             }
         }
 
+        /// <summary>
+        /// Gets the image of the object
+        /// </summary>
         public Texture2D Image { get; protected set; }
 
+        /// <summary>
+        /// Draws the object on the screen
+        /// </summary>
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(this.Image, this.position, Color.White);

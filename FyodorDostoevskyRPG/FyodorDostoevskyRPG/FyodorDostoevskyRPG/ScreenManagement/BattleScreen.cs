@@ -7,7 +7,7 @@
     using FyodorDostoevskyRPG.GameObject;
     using FyodorDostoevskyRPG.GameObject.GameUnits;
 
-    class BattleScreen : BaseScreen, IScreen
+    public class BattleScreen : BaseScreen, IScreen
     {
         // Fields
         private Texture2D battleImage, healtImage, healthBackground;
@@ -50,7 +50,7 @@
             this.healtImage = this.baseScreenContentManager.Load<Texture2D>("healthbar");
             this.healthBackground = this.baseScreenContentManager.Load<Texture2D>("healthbar-background");
 
-            this.heroHealthBackgroundRect = new Rectangle(10, 10, this.hero.MaxHealth, 25);
+            this.heroHealthBackgroundRect = new Rectangle(10, 10, this.hero.FullHeath, 25);
             this.monsterHealthBackgroundRect = new Rectangle(500, 10, this.monsterStartHealt, 25);
 
             this.font = this.baseScreenContentManager.Load<SpriteFont>("Fonts/WideLatin");
@@ -74,7 +74,7 @@
             }
             else if (!hero.IsAlive)
             {
-                FyodorsAdventure.ShouldExit = true;
+                ScreenManager.Instance.LoadScreen(new GameOverScreen());
             }
 
             this.heroHealthBar = new Rectangle(10, 10, this.hero.Health, 25);

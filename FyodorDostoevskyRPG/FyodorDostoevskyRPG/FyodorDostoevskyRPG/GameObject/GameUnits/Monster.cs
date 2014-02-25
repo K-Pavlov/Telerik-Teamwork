@@ -11,6 +11,9 @@
             this.Ranged = ranged;
         }
 
+        /// <summary>
+        /// Checks if the unit is ranged
+        /// </summary>
         public bool Ranged { get; private set; }
     }
 }

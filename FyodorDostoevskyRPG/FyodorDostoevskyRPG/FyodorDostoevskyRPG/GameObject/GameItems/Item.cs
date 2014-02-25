@@ -13,6 +13,9 @@
         {
         }
         
+        /// <summary>
+        /// Get or set if the item has already been used
+        /// </summary>
         public bool IsUsed
         {
             get
@@ -23,6 +26,6 @@
             {
                 this.isUsed = value;
             }
-        }
+        }        
     }
 }

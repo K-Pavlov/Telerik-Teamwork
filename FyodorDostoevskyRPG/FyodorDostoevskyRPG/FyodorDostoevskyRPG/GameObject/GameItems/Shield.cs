@@ -1,18 +1,26 @@
 ﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
     using System;
+
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
-    public class Shield : Item, IDrawObject
+    using FyodorDostoevskyRPG.ScreenManagement;
+
+    public class Shield : SpecialAbilityItem, ISpecial, IDrawObject
     {
         protected double defense;
-        private static Random random;
+        private static Random random = new Random();
+
+        /// <summary>
+        /// Create a shield
+        /// </summary>
+        /// <param name="position">The position of the shield</param>
+        /// <param name="defense">The defense of the shield</param>
         public Shield(Vector2 position, double defense)
-            : base(ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("shield"), position)
+            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("shield"), position)
         {
             this.Defense = defense;
-            random = new Random();
         }
 
         public double Defense
@@ -27,7 +35,7 @@
             }
         }
 
-        public bool ActivateSpecial()
+        public override bool ActivateSpecial()
         {
             if (random.Next(1, 101) <= 10)
             {
@@ -37,7 +45,7 @@
             return false;
         }
 
-        public void DeactivateSpecial()
+        public override void DeactivateSpecial()
         {
             this.Defense /= 2;
         }

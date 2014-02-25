@@ -17,18 +17,26 @@
         private Animation heroAnimation;
         private DateTime lastHealed;
         private static Random random;
-        public int DamageMax { get; set; }
+
+        private const int HeroHealth = 100;
+        private const int HeroMinDamage = 5;
+        private const int HeroMaxDamage = 8;
+
 
         // Constructor
-        public Hero(Vector2 position, string name, int health, int damageMin, int damageMax)
-            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("heroAnimation"), position, name, health, damageMin)
+        /// <summary>
+        /// Create a hero
+        /// </summary>
+        /// <param name="position">The hero position</param>
+        /// <param name="name">The hero name</param>
+        public Hero(Vector2 position, string name)
+            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("heroAnimation"), position, name, Hero.HeroHealth, Hero.HeroMinDamage)
         {
-            this.DamageMax = damageMax;
+            this.DamageMax = Hero.HeroMaxDamage;
             this.heroAnimation = new Animation(position, new Vector2(5, 4));
             this.heroAnimation.Image = this.Image;
             this.heroSpeed = 1.4f;
 
-            this.MaxHealth = health;
             this.Weapon = new Sword(Vector2.Zero, 1, 2);
             this.Shield = new Shield(Vector2.Zero, 1 );
             this.lastHealed = DateTime.Now;
@@ -36,20 +44,32 @@
         }
 
         // Properties
-        public int MaxHealth { get; private set; }
+        /// <summary>
+        /// Gets the max hero damage
+        /// </summary>
+        public int DamageMax { get; private set; }
 
+        /// <summary>
+        /// Gets the hero weapon
+        /// </summary>
         public Weapon Weapon
         {
             get { return this.weapon; }
-            set { this.weapon = value; }
+            private set { this.weapon = value; }
         }
 
+        /// <summary>
+        /// Gets the hero shield
+        /// </summary>
         public Shield Shield
         {
             get { return this.shield; }
-            set { this.shield = value; }
+            private set { this.shield = value; }
         }
 
+        /// <summary>
+        /// Gets the rectangle around the hero
+        /// </summary>
         public override Rectangle Rectangle
         {
             get
@@ -59,6 +79,9 @@
         }
 
         // Methods
+        /// <summary>
+        /// Handles the input for moving the hero
+        /// </summary>
         public void HandleInput()
         {
             if (InputManager.Instance.MouseLeftButtonDown())
@@ -99,6 +122,9 @@
             }
         }
 
+        /// <summary>
+        /// Updates the hero position and animation
+        /// </summary>
         public void Update(GameTime gameTime)
         {
             if (this.heroAnimation.IsActive)
@@ -110,11 +136,18 @@
             this.heroAnimation.Update(gameTime);
         }
 
+        /// <summary>
+        /// Draws the hero onto the screen
+        /// </summary>
         public override void Draw(SpriteBatch spriteBatch)
         {
             this.heroAnimation.Draw(spriteBatch);
         }
 
+        /// <summary>
+        /// Updates the current hero items
+        /// </summary>
+        /// <param name="item">Shield or weapon</param>
         public void UpdateItem(Item item)
         {
             if (item is Weapon)
@@ -127,17 +160,20 @@
             }
         }
 
+        /// <summary>
+        /// Heals the hero
+        /// </summary>
         public void Heal()
         {
-            if ((DateTime.Now).CompareTo(lastHealed.AddSeconds(1)) > 0 && (this.Health < this.MaxHealth))
+            if ((DateTime.Now).CompareTo(lastHealed.AddSeconds(3)) > 0 && (this.Health < this.FullHeath))
             {
                 this.Health += 10;
+                Sounds.PlayHeal();
                 lastHealed = DateTime.Now;
-                Sounds.heal.Play();
 
-                if (this.Health > this.MaxHealth)
+                if (this.Health > this.FullHeath)
                 {
-                    this.Health = this.MaxHealth;
+                    this.Health = this.FullHeath;
                 }
             }
         }

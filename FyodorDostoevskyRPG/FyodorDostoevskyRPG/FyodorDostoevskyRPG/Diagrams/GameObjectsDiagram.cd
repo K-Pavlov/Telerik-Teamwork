@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameItems.Chest">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAEAAAAAAAAAgACAAAAQBAAAAAAA=</HashCode>
+      <FileName>GameObject\GameItems\Chest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameItems.Flail">
+    <Position X="10.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAQAAAAAAAAAAAAAAAAAAAAAQAAAAIAAA=</HashCode>
+      <FileName>GameObject\GameItems\Flail.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameItems.Item">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>GameObject\GameItems\Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameItems.Shield">
+    <Position X="8.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAIAAI=</HashCode>
+      <FileName>GameObject\GameItems\Shield.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameItems.SpecialAbilityItem">
+    <Position X="10.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>GameObject\GameItems\SpecialAbilityItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameItems.Sword">
+    <Position X="12.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAAA=</HashCode>
+      <FileName>GameObject\GameItems\Sword.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameItems.Weapon">
+    <Position X="11.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>GameObject\GameItems\Weapon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameUnits.Dragon">
+    <Position X="19.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAAAAAA=</HashCode>
+      <FileName>GameObject\GameUnits\Dragon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameUnits.Golem">
+    <Position X="17.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAQAAAAAAAA=</HashCode>
+      <FileName>GameObject\GameUnits\Golem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameUnits.Hero">
+    <Position X="15" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQQCAAAECIiCBIAAAAAAACAAiAkgAQAQQAAAAAAA=</HashCode>
+      <FileName>GameObject\GameUnits\Hero.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameUnits.Monster">
+    <Position X="18.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObject\GameUnits\Monster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.GameUnits.Unit">
+    <Position X="17.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAACACAAAAAgAAgAABAAAQAAAAkBAAAAAAAgAAAAAg=</HashCode>
+      <FileName>GameObject\GameUnits\Unit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.GameObject.ObjectRPG">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAgAAAAIAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObject\ObjectRPG.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="FyodorDostoevskyRPG.GameObject.GameItems.ISpecial">
+    <Position X="12.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>GameObject\GameItems\ISpecial.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FyodorDostoevskyRPG.GameObject.GameUnits.IActions">
+    <Position X="19" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>GameObject\GameUnits\IActions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FyodorDostoevskyRPG.GameObject.IDrawObject">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObject\IDrawObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="FyodorDostoevskyRPG.GameObject.GameItems.ChestState">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>GameObject\GameItems\ChestState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -5,6 +5,7 @@
 
     internal class Animation
     {
+        // Fields
         static int frameCounter = 0;
         private int frameCount;
         private int switchFrame;
@@ -14,6 +15,24 @@
         private Rectangle currentSprite;
         private Vector2 position;
 
+        // Constructor
+        /// <summary>
+        /// Creates a new animation
+        /// </summary>
+        /// <param name="position">The position of the animation</param>
+        /// <param name="rowNcol">The number of rows and columns of the animation spritesheet</param>
+        public Animation(Vector2 position, Vector2 rowNcol)
+        {
+            this.IsActive = false;
+            this.switchFrame = 100;
+            this.Position = position;
+            this.amountOfFrames = rowNcol;
+        }
+
+        // Properties
+        /// <summary>
+        /// Sets the animation image
+        /// </summary>
         public Texture2D Image
         {
             set
@@ -22,6 +41,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the animation position
+        /// </summary>
         public Vector2 Position
         {
             get
@@ -62,8 +84,14 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the row of the animation spritesheet
+        /// </summary>
         public int SpriteRow { get; set; }
 
+        /// <summary>
+        /// Gets the sprite width
+        /// </summary>
         public int FrameWidth
         {
             get
@@ -72,6 +100,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the sprite height
+        /// </summary>
         public int FrameHeight
         {
             get
@@ -80,16 +111,15 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the state of the animation
+        /// </summary>
         public bool IsActive { get; set; }
 
-        public Animation(Vector2 position, Vector2 rowNcol)
-        {
-            this.IsActive = false;
-            this.switchFrame = 100;
-            this.Position = position;
-            this.amountOfFrames = rowNcol;
-        }
-
+        // Methods
+        /// <summary>
+        /// Updates the animation sprite and position
+        /// </summary>
         public void Update(GameTime gameTime)
         {
             if (this.IsActive)
@@ -121,6 +151,9 @@
             this.currentSprite = new Rectangle(this.spriteCol, this.SpriteRow * this.FrameHeight, this.FrameWidth, this.FrameHeight);
         }
 
+        /// <summary>
+        /// Draws the animation
+        /// </summary>
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(this.image, this.Position, this.currentSprite, Color.White);

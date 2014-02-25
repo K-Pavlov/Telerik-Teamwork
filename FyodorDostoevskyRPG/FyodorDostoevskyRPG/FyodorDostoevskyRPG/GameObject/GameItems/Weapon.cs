@@ -1,21 +1,25 @@
 ﻿namespace FyodorDostoevskyRPG.GameObject.GameItems
 {
+    using System;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    using System;
 
-    public abstract class Weapon : Item
+
+    public abstract class Weapon : SpecialAbilityItem, ISpecial
     {
         protected int damage;
         protected double crit;
 
-        public Weapon(Texture2D image, Vector2 position, int dmg, double crit)
+        protected Weapon(Texture2D image, Vector2 position, int dmg, double crit)
             : base(image, position)
         {
             this.Damage = dmg;
             this.Crit = crit;
         }
 
+        /// <summary>
+        /// Gets or sets the damage of the weapon
+        /// </summary>
         public int Damage
         {
             get
@@ -35,6 +39,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the critical damage of the weapon
+        /// </summary>
         public double Crit
         {
             get
@@ -46,8 +53,5 @@
                 this.crit = value;
             }
         }
-
-        public abstract bool ActivateSpecial();
-        public abstract void DeactivateSpecial();
     }
 }

@@ -4,8 +4,7 @@
     {
         bool IsAlive { get; }
 
-        void DisplayHealth(int health);
         void TakeDamage(int damage);
-        void Attack(int damage);
+        void Die();
     }
 }

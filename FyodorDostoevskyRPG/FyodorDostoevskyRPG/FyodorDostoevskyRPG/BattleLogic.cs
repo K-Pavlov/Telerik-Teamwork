@@ -7,13 +7,20 @@
 
     public static class BattleLogic
     {
+        // Fields
         private static bool activated;
         private static Random randomGenerator;
+
+        // Constructor
         static BattleLogic()
         {
             randomGenerator = new Random();
             
         }
+
+        /// <summary>
+        /// Performs the hero attack
+        /// </summary>
         public static void HeroAttack(Hero hero, Monster monster)
         {
             activated = hero.Weapon.ActivateSpecial();            

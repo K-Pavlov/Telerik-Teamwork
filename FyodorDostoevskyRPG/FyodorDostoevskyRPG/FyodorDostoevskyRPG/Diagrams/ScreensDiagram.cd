@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.AboutScreen">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAIAAAAQ=</HashCode>
+      <FileName>ScreenManagement\AboutScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.BaseScreen">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\BaseScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.BattleScreen">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAEAAEgEAABgAkAAAAAAIAAAAAQAAAAEQAAAIAAAQ=</HashCode>
+      <FileName>ScreenManagement\BattleScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.GameOverScreen">
+    <Position X="17.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\GameOverScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.GameWinScreen">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\GameWinScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.Images">
+    <Position X="23.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgYCEAAAAAAgAgIgAAIAAAAAAAAAABBAAAIACAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\Images.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.MainMenuScreen">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAQAAAAAAACBAAAAAAhAAAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\MainMenuScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.MapOneScreen">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEABAAAAAAgAAAICAAAAQAAAAAAAAAAACAAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\MapOneScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.ScreenManager">
+    <Position X="22" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAggAAAAoAAAAAAAhAAAAASAAkAAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\ScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FyodorDostoevskyRPG.ScreenManagement.TitleScreen">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAEAAAAAEAAgAAAAAAAAAAAAAAABIAAAAAAAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\TitleScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="FyodorDostoevskyRPG.ScreenManagement.IScreen">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ScreenManagement\IScreen.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

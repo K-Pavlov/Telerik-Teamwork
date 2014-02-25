@@ -1,21 +1,27 @@
 ﻿namespace FyodorDostoevskyRPG
 {
     using System;
+
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Audio;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Media;
+
+    using FyodorDostoevskyRPG.ScreenManagement;
+
     public static class Sounds
     {
         public static int resumeTime = 0;
-        public static SoundEffect boundaryBounceSound = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/bounce");
-        public static SoundEffect step = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/step");
-        public static SoundEffect heal = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/drinking_potion");
-        public static Song mainSong = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/MAINMENU");
-        public static Song exitSong = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/exitSong");
-        public static Song mapScreen = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/mapScreen");
-        public static Song combatMusic = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/combat");
-        public static Song loseCombat = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/LoseCombat");
+
+        public static SoundEffect boundaryBounceSound = ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/bounce");
+        public static SoundEffect step = ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/step");
+        public static SoundEffect heal = ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/heal");
+
+        public static Song mainSong = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/MAINMENU");
+        public static Song exitSong = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/exitSong");
+        public static Song mapScreen = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/mapScreen");
+        public static Song combatMusic = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/combat");
+        public static Song loseCombat = ScreenManager.Instance.screenManagerContent.Load<Song>("Sounds/LoseCombat");
 
         /////////////////////////////////////////////////////////
         public static void StartMainMusic()
@@ -59,6 +65,11 @@
         {
             MediaPlayer.Play(Sounds.loseCombat);
             System.Threading.Thread.Sleep(6500);
+        }
+        /////////////////////////////////////////////////////////
+        public static void PlayHeal()
+        {
+            heal.Play();
         }
     }
 }

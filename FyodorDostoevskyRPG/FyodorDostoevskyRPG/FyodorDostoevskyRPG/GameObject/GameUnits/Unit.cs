@@ -6,19 +6,13 @@
 
     public abstract class Unit : ObjectRPG, IDrawObject, IActions
     {
+        // Fields
         private string name;
         private int health;
         private int damage;
-        private int fullHealth;
+        private int fullHealth;        
 
-        public virtual Rectangle Rectangle
-        {
-            get
-            {
-                return new Rectangle((int)this.Position.X, (int)this.Position.Y,this.Image.Width,this.Image.Height);                
-            }
-        }
-
+        // Constructor
         protected Unit(Texture2D image, Vector2 position, string name, int health, int damage)
             :base(image, position)
         {
@@ -29,6 +23,10 @@
             this.FullHeath = health;
         }
 
+        // Properties
+        /// <summary>
+        /// Gets or sets the name of the unit
+        /// </summary>
         public string Name
         {
             get
@@ -45,6 +43,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the current health of the unit
+        /// </summary>
         public int Health
         {
             get
@@ -57,6 +58,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the starting heath of the unit
+        /// </summary>
         public int FullHeath
         {
             get
@@ -69,6 +73,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the damage of the unit
+        /// </summary>
         public int Damage
         {
             get
@@ -85,26 +92,37 @@
             }
         }
 
+        /// <summary>
+        /// Checks if the unit is alive
+        /// </summary>
         public bool IsAlive { get; private set; }
 
-
-
-        public void DisplayHealth(int health)
+        /// <summary>
+        /// Gets the rectangle around the unit
+        /// </summary>
+        public virtual Rectangle Rectangle
         {
+            get
+            {
+                return new Rectangle((int)this.Position.X, (int)this.Position.Y, this.Image.Width, this.Image.Height);
+            }
         }
 
+        // Methods
+        /// <summary>
+        /// Kills the unit
+        /// </summary>
         public void Die()
         {
             IsAlive = false;
         }
 
+        /// <summary>
+        /// Inflicts damage onto the unit
+        /// </summary>
         public void TakeDamage(int damage)
         {
             this.Health -= damage;
-        }
-
-        public void Attack(int damage)
-        {
         }
     }
 }

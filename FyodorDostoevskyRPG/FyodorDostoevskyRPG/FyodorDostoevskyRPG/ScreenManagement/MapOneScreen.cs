@@ -25,7 +25,7 @@
             base.LoadContent(content);
 
             this.mapTexture = this.baseScreenContentManager.Load<Texture2D>("map-one");
-            this.braveHero = new Hero(new Vector2(10, 310), "DragonSlayer", 100, 5, 8);
+            this.braveHero = new Hero(new Vector2(10, 310), "DragonSlayer");
 
             this.monstersOnThisMap = new List<Monster>()
             {
@@ -68,6 +68,12 @@
             }
 
             this.braveHero.HandleInput();
+            this.braveHero.Update(gameTime);
+
+            if (this.monstersOnThisMap.Count == 0)
+            {
+                ScreenManager.Instance.LoadScreen(new GameWinScreen());
+            }
 
             foreach (var monster in monstersOnThisMap)
             {
@@ -76,13 +82,12 @@
                     this.monstersOnThisMap.Remove(monster);
                     Sounds.StopMapMusic();
                     Sounds.StartBattleMusic();
-                    ScreenManager.Instance.LoadScreen(new BattleScreen(braveHero,monster));
+                    ScreenManager.Instance.LoadScreen(new BattleScreen(braveHero, monster));
                     break;
                 }
             }
 
             if (braveHero.Rectangle.Intersects(fireRect))
-                //((braveHero.Position.X > 530 && braveHero.Position.X < 565) && (braveHero.Position.Y > 86 && braveHero.Position.Y < 125))
             {
                 this.braveHero.Heal();
             }
@@ -97,8 +102,6 @@
                     }
                 }
             }
-            this.braveHero.Update(gameTime);
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)

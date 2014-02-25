@@ -9,7 +9,6 @@
     {
         private KeyboardState currentKey, previousKey;
         private Texture2D logo;
-        public Images Image;
 
         public override void LoadContent(ContentManager content)
         {
