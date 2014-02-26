@@ -18,7 +18,7 @@
         /// <param name="position">The position of the golem</param>
         /// <param name="ranged">True for ranged, false for melee</param>
         public Golem(string name, Vector2 position, bool ranged)
-            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("stoneGolem"), 
+            : base(ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("stoneGolem"), 
             position, name, random.Next(30, 50), Golem.GolemDamage, ranged)
         {
         }

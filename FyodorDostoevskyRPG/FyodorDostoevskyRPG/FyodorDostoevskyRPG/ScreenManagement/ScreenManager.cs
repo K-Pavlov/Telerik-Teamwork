@@ -10,7 +10,7 @@
         // Fields
         private static ScreenManager instance;
 
-        public ContentManager screenManagerContent;
+        public ContentManager ScreenManagerContent;
         private Stack<BaseScreen> screenStack = new Stack<BaseScreen>();
         private BaseScreen currentScreen = new TitleScreen();
 
@@ -53,7 +53,7 @@
             this.screenStack.Push(screen);
             //this.currentScreen.UnloadContent();
             this.currentScreen = screen;
-            this.currentScreen.LoadContent(this.screenManagerContent);
+            this.currentScreen.LoadContent(this.ScreenManagerContent);
         }
 
         /// <summary>
@@ -73,8 +73,8 @@
         /// </summary>
         public void LoadContent(ContentManager content)
         {
-            this.screenManagerContent = new ContentManager(content.ServiceProvider, "Content");
-            this.currentScreen.LoadContent(this.screenManagerContent);
+            this.ScreenManagerContent = new ContentManager(content.ServiceProvider, "Content");
+            this.currentScreen.LoadContent(this.ScreenManagerContent);
         }
 
         /// <summary>
@@ -82,7 +82,7 @@
         /// </summary>
         public void UnloadContent()
         {
-            this.screenManagerContent.Unload();
+            this.ScreenManagerContent.Unload();
         }
 
         /// <summary>

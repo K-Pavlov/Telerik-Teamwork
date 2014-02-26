@@ -56,25 +56,25 @@
                 {
                     this.position.X = 3;
                     this.position.Y = value.Y;
-                    Sounds.boundaryBounceSound.Play();
+                    Sounds.BoundaryBounceSound.Play();
                 }
                 else if (value.X >= 760)
                 {
                     this.position.X = 750;
                     this.position.Y = value.Y;
-                    Sounds.boundaryBounceSound.Play();
+                    Sounds.BoundaryBounceSound.Play();
                 }
                 else if (value.Y <= -10)
                 {
                     this.position.X = value.X;
                     this.position.Y = 3;
-                    Sounds.boundaryBounceSound.Play();
+                    Sounds.BoundaryBounceSound.Play();
                 }
                 else if (value.Y >= 540)
                 {
                     this.position.X = value.X;
                     this.position.Y = 530;
-                    Sounds.boundaryBounceSound.Play();
+                    Sounds.BoundaryBounceSound.Play();
                 }
                 else
                 {
@@ -135,7 +135,7 @@
                 frameCounter++;
                 if (frameCounter == 4)
                 {
-                    Sounds.step.Play();
+                    Sounds.Step.Play();
                     frameCounter = 0;
                 }
 

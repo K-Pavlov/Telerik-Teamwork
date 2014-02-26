@@ -25,14 +25,9 @@
             this.startBtn = new StartButton(new Vector2(150, 100));
             this.aboutBtn = new AboutButton(new Vector2(150, 150));
             this.exitBtn = new ExitButton(new Vector2(150, 200));
-            this.startBtn.Click += button_Click;
-            this.aboutBtn.Click += button_Click;
-            this.exitBtn.Click += button_Click;
-        }
-
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
+            this.startBtn.Click += Button_Click;
+            this.aboutBtn.Click += Button_Click;
+            this.exitBtn.Click += Button_Click;
         }
 
         public override void Update(GameTime gameTime)
@@ -51,7 +46,7 @@
         }
 
         // Event handler
-        void button_Click(object sender, System.EventArgs e)
+        void Button_Click(object sender, System.EventArgs e)
         {
             if (sender is StartButton)
             {

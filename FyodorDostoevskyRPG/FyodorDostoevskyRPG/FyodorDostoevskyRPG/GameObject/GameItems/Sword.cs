@@ -18,7 +18,7 @@
         /// <param name="dmg">The damage of the sword</param>
         /// <param name="crit">The critical damage of the sword</param>
         public Sword(Vector2 position, int damage, double crit)
-            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("sword"), 
+            : base(ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("sword"), 
             position, damage, crit)
         {
         }

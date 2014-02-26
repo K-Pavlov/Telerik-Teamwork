@@ -9,9 +9,9 @@
     {
         // Constructor
         public AboutButton(Vector2 pos)
-            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/aboutUP"),
-                   ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/aboutOVER"),
-                   ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/aboutDOWN"), pos)
+            : base(ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("Buttons/aboutUP"),
+                   ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("Buttons/aboutOVER"),
+                   ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("Buttons/aboutDOWN"), pos)
         {
         }
     }

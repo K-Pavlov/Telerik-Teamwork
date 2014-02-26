@@ -30,7 +30,7 @@
         /// <param name="position">The hero position</param>
         /// <param name="name">The hero name</param>
         public Hero(Vector2 position, string name)
-            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("heroAnimation"), position, name, Hero.HeroHealth, Hero.HeroMinDamage)
+            : base(ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("heroAnimation"), position, name, Hero.HeroHealth, Hero.HeroMinDamage)
         {
             this.DamageMax = Hero.HeroMaxDamage;
             this.heroAnimation = new Animation(position, new Vector2(5, 4));

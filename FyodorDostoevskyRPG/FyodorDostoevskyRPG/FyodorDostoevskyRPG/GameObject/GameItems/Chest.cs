@@ -20,7 +20,7 @@
         /// </summary>
         /// <param name="position">The position of the chest</param>
         public Chest(Vector2 position)
-            :base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("ChestClosed"), position) 
+            :base(ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("ChestClosed"), position) 
         {
             ChestStatus = ChestState.Closed;
         }
@@ -43,17 +43,17 @@
             ChestStatus = ChestState.Opened;
             if (whatToGet >= 1 && whatToGet <= 3)
             {
-                OpenedChest = ScreenManager.Instance.screenManagerContent.Load<Texture2D>("sword");
+                OpenedChest = ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("sword");
                 return new Sword(new Vector2(this.Position.X,this.Position.Y), 3, 4);
             }
              else if (whatToGet >= 4 && whatToGet <= 6)
             {
-                OpenedChest = ScreenManager.Instance.screenManagerContent.Load<Texture2D>("flail");
+                OpenedChest = ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("flail");
                 return new Flail(new Vector2(this.Position.X, this.Position.Y), 4, 5);
             }
             else
             {
-                OpenedChest = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<Texture2D>("shield");
+                OpenedChest = ScreenManagement.ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("shield");
                 return new Shield(new Vector2(this.Position.X, this.Position.Y), 2);
             }
         }

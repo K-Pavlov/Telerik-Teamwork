@@ -17,11 +17,6 @@
             this.credits = this.baseScreenContentManager.Load<Texture2D>("Credits");
         }
 
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-        }
-
         public override void Update(GameTime gameTime)
         {
             if (InputManager.Instance.KeyPressed(Keys.Escape))

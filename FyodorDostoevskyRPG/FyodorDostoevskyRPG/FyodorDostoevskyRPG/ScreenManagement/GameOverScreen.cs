@@ -15,11 +15,6 @@
             this.gameOverImage = this.baseScreenContentManager.Load<Texture2D>("gameOver");
         }
 
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-        }
-
         public override void Update(GameTime gameTime)
         {
             if (InputManager.Instance.KeyPressed(Keys.Escape))

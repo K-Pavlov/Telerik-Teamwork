@@ -4,7 +4,6 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Audio;
-    using Microsoft.Xna.Framework.Content;
 
     public abstract class Button : IButton
     {
@@ -12,12 +11,12 @@
         public event EventHandler Hover;
         public event EventHandler Click;
 
-        private SoundEffect mouseClickSound;
+        private readonly SoundEffect mouseClickSound;
 
         // Constructor
         protected Button(Texture2D imageUp, Texture2D imageOver, Texture2D imageDown, Vector2 pos)
         {
-            this.mouseClickSound = ScreenManagement.ScreenManager.Instance.screenManagerContent.Load<SoundEffect>("Sounds/mouse-click"); 
+            this.mouseClickSound = ScreenManagement.ScreenManager.Instance.ScreenManagerContent.Load<SoundEffect>("Sounds/mouse-click"); 
 
             this.BtnImageUp = imageUp;
             this.BtnImageOver = imageOver;

@@ -15,11 +15,6 @@
             this.gameWingImage = this.baseScreenContentManager.Load<Texture2D>("win");
         }
 
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-        }
-
         public override void Update(GameTime gameTime)
         {
             if (InputManager.Instance.KeyPressed(Keys.Escape))

@@ -4,7 +4,6 @@
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
 
-    using FyodorDostoevskyRPG.GameObject;
     using FyodorDostoevskyRPG.GameObject.GameUnits;
 
     public class BattleScreen : BaseScreen, IScreen
@@ -17,7 +16,7 @@
         private Hero hero;
         private Monster monster;
 
-        private int heroStartHealth, monsterStartHealt;
+        private readonly int heroStartHealth, monsterStartHealt;
         private Rectangle heroHealthBar, monsterHealthBar, heroHealthBackgroundRect, monsterHealthBackgroundRect;
 
         private SpriteFont font;
@@ -54,11 +53,6 @@
             this.monsterHealthBackgroundRect = new Rectangle(500, 10, this.monsterStartHealt, 25);
 
             this.font = this.baseScreenContentManager.Load<SpriteFont>("Fonts/WideLatin");
-        }
-
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)

@@ -55,11 +55,6 @@
             this.fireRect = new Rectangle(500, 60, 100, 100);
         }
 
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-        }
-
         public override void Update(GameTime gameTime)
         {
             if (InputManager.Instance.KeyPressed(Keys.Escape))

@@ -17,11 +17,6 @@
             this.logo = this.baseScreenContentManager.Load<Texture2D>("TitleImage");
         }
 
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-        }
-
         public override void Update(GameTime gameTime)
         {
             this.previousKey = this.currentKey;

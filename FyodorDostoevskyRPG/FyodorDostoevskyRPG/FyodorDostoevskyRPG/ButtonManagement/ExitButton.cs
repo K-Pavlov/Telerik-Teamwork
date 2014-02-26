@@ -9,9 +9,9 @@
     {
         // Constructor
         public ExitButton(Vector2 pos)
-            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/exitUP"),
-                   ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/exitOVER"),
-                   ScreenManager.Instance.screenManagerContent.Load<Texture2D>("Buttons/exitDOWN"), pos)
+            : base(ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("Buttons/exitUP"),
+                   ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("Buttons/exitOVER"),
+                   ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("Buttons/exitDOWN"), pos)
         {
         }
     }

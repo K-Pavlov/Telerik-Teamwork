@@ -29,7 +29,7 @@
 
         public void LoadContent()
         {
-            this.content = new ContentManager(ScreenManager.Instance.screenManagerContent.ServiceProvider, "Content");
+            this.content = new ContentManager(ScreenManager.Instance.ScreenManagerContent.ServiceProvider, "Content");
             if (Path != string.Empty)
             {
                 this.Texture = content.Load<Texture2D>(Path);
@@ -79,9 +79,9 @@
             this.content.Unload();
         }
 
-        public void Update(GameTime gameTime)
-        {
-        }
+        //public void Update(GameTime gameTime)
+        //{
+        //}
 
         public void Draw(SpriteBatch spriteBatch)
         {

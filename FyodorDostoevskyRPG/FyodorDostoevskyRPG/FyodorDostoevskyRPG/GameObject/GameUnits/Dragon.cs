@@ -18,7 +18,7 @@
         /// <param name="position">The position of the dragon</param>
         /// <param name="ranged">True for ranged, false for melee</param>
         public Dragon(string name, Vector2 position, bool ranged)
-            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("dragonImage"), 
+            : base(ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("dragonImage"), 
             position, name, random.Next(70,80), Dragon.DragonDamage, ranged)
         {
         }

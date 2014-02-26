@@ -18,7 +18,7 @@
         /// <param name="position">The position of the shield</param>
         /// <param name="defense">The defense of the shield</param>
         public Shield(Vector2 position, double defense)
-            : base(ScreenManager.Instance.screenManagerContent.Load<Texture2D>("shield"), position)
+            : base(ScreenManager.Instance.ScreenManagerContent.Load<Texture2D>("shield"), position)
         {
             this.Defense = defense;
         }
